@@ -277,8 +277,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-});
-
 let lenis;
 
 if (typeof Lenis !== "undefined") {
