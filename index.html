@@ -2,83 +2,74 @@
 <html lang="ja">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>MELLENA | Creative Studio</title>
 
-    <meta name="description"
-        content="MELLENAはWeb制作・映像制作・デザイン・イベント・esportsなど、クリエイティブを通して新しい価値を創造するクリエイティブスタジオです。">
-
-    <meta property="og:title" content="MELLENA">
-    <meta property="og:description" content="Creative Studio">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="assets/ogp.jpg">
-
-    <link rel="icon" href="assets/favicon.png">
+    <meta name="description" content="MELLENAはWeb制作・映像制作・デザイン・イベント・esportsなど、クリエイティブを通じて価値を届けるクリエイティブスタジオです。">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
 
     <!-- FontAwesome -->
     <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-    <!-- ========================= -->
+    <!-- ====================================== -->
     <!-- Loading -->
-    <!-- ========================= -->
+    <!-- ====================================== -->
 
     <div id="loading">
 
-        <div class="loading-inner">
+        <div class="loading">
 
-            <h1>MELLENA</h1>
+            <img src="assets/logo.svg" alt="MELLENA Logo" class="loading__logo">
 
-            <p>Creative Studio</p>
+            <div class="loading__bar">
 
-            <div class="loading-bar">
-
-                <span id="loading-progress"></span>
+                <span id="loadingProgress"></span>
 
             </div>
 
-            <div id="loading-percent">0%</div>
+            <p id="loadingText">Loading 0%</p>
 
         </div>
 
     </div>
 
-    <!-- ========================= -->
-    <!-- Custom Cursor -->
-    <!-- ========================= -->
+    <!-- ====================================== -->
+    <!-- Cursor -->
+    <!-- ====================================== -->
 
     <div class="cursor"></div>
-
     <div class="cursor-dot"></div>
+    <div class="cursor-label">VIEW</div>
 
-    <!-- ========================= -->
+    <!-- ====================================== -->
     <!-- Background -->
-    <!-- ========================= -->
+    <!-- ====================================== -->
 
     <div class="background-gradient"></div>
 
-    <div id="particles"></div>
+    <canvas id="particles"></canvas>
 
-    <!-- ========================= -->
+    <!-- ====================================== -->
     <!-- Header -->
-    <!-- ========================= -->
+    <!-- ====================================== -->
 
-    <header id="header">
+    <header class="header" id="header">
 
         <div class="container">
 
@@ -88,13 +79,11 @@
 
             </a>
 
-            <nav>
+            <nav class="nav">
 
                 <ul>
 
                     <li><a href="#about">ABOUT</a></li>
-
-                    <li><a href="#creative">CREATIVE</a></li>
 
                     <li><a href="#services">SERVICES</a></li>
 
@@ -106,7 +95,7 @@
 
             </nav>
 
-            <button class="menu-btn">
+            <button class="menu-button" id="menuButton">
 
                 <span></span>
                 <span></span>
@@ -118,142 +107,175 @@
 
     </header>
 
-    <!-- ========================= -->
+    <!-- ====================================== -->
     <!-- Hero -->
-    <!-- ========================= -->
+    <!-- ====================================== -->
 
-    <section id="hero">
+    <section class="hero" id="hero">
 
-        <video autoplay muted loop playsinline id="hero-video">
+        <!-- Video -->
 
-            <source src="assets/video/hero-video.mp4" type="video/mp4">
+        <video
+            class="hero__video"
+            autoplay
+            muted
+            loop
+            playsinline>
+
+            <source src="assets/hero.mp4" type="video/mp4">
 
         </video>
 
-        <div class="hero-overlay"></div>
+        <!-- Overlay -->
 
-        <div class="hero-content">
+        <div class="hero__overlay"></div>
 
-            <p class="hero-sub">
+        <!-- Grid -->
 
-                Creative Studio
+        <div class="hero__grid"></div>
 
-            </p>
+        <!-- Content -->
 
-            <h1>
+        <div class="hero__content">
 
-                CREATE<br>
-                THE FUTURE.
+            <span class="hero__eyebrow">
+
+                CREATIVE STUDIO
+
+            </span>
+
+            <h1 class="hero__title">
+
+                MELLENA
 
             </h1>
 
-            <p class="hero-text">
+            <h2 class="hero__subtitle">
 
-                Web Development / Movie Production / Design / Branding / Events / esports
+                We Create<br>
+                Experiences.
+
+            </h2>
+
+            <p class="hero__text">
+
+                Web Design・Movie・Branding・Photography・
+                Event Production・esports
 
             </p>
 
-            <a href="#about" class="hero-button">
+            <div class="hero__buttons">
 
-                Explore
+                <a href="#works" class="btn btn-primary">
 
-                <i class="fa-solid fa-arrow-right"></i>
+                    VIEW WORKS
 
-            </a>
+                </a>
+
+                <a href="#contact" class="btn btn-outline">
+
+                    CONTACT
+
+                </a>
+
+            </div>
 
         </div>
 
-        <div class="hero-scroll">
+        <!-- Scroll -->
 
-            <span></span>
+        <div class="scroll-indicator">
 
-            <p>SCROLL</p>
+            <span>SCROLL</span>
 
-        </div>
-
-    </section>
-
-    <!-- ========================= -->
-    <!-- Brand Slider -->
-    <!-- ========================= -->
-
-    <section id="brand-slider">
-
-        <div class="brand-track">
-
-            <span>WEB DEVELOPMENT</span>
-
-            <span>CREATIVE DESIGN</span>
-
-            <span>MOVIE PRODUCTION</span>
-
-            <span>PHOTOGRAPHY</span>
-
-            <span>BRANDING</span>
-
-            <span>EVENT PLANNING</span>
-
-            <span>ESPORTS</span>
-
-            <span>WEB DEVELOPMENT</span>
-
-            <span>CREATIVE DESIGN</span>
-
-            <span>MOVIE PRODUCTION</span>
-
-            <span>PHOTOGRAPHY</span>
-
-            <span>BRANDING</span>
-
-            <span>EVENT PLANNING</span>
-
-            <span>ESPORTS</span>
+            <div class="scroll-line"></div>
 
         </div>
 
     </section>
 
-        <!-- ========================= -->
+    <!-- ====================================== -->
+    <!-- Hero End -->
+    <!-- ====================================== -->
+
+        <!-- ====================================== -->
+    <!-- Creative Statement -->
+    <!-- ====================================== -->
+
+    <section class="statement">
+
+        <div class="container">
+
+            <p class="statement__label">
+                WHO WE ARE
+            </p>
+
+            <h2 class="statement__title">
+
+                We don't just create.<br>
+                We create experiences.
+
+            </h2>
+
+            <p class="statement__text">
+
+                MELLENAは、Web・映像・デザイン・イベント・esportsなど、
+                ジャンルを超えたクリエイティブで、
+                人とブランドをつなぐ体験をデザインします。
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- ====================================== -->
     <!-- About -->
-    <!-- ========================= -->
+    <!-- ====================================== -->
 
-    <section id="about">
+    <section class="about" id="about">
 
-        <div class="container">
+        <div class="container about__container">
 
-            <div class="section-title">
-                <span>ABOUT</span>
-                <h2>クリエイティブで、<br>未来をデザインする。</h2>
+            <div class="about__image">
+
+                <img
+                    src="assets/about.jpg"
+                    alt="MELLENA">
+
             </div>
 
-            <div class="about-grid">
+            <div class="about__content">
 
-                <div class="about-image">
+                <span class="section-tag">
 
-                    <img src="assets/about.jpg" alt="MELLENA">
+                    ABOUT
 
-                </div>
+                </span>
 
-                <div class="about-content">
+                <h2>
 
-                    <p class="lead">
-                        MELLENAは、
-                        Web制作・映像制作・デザイン・イベント・esportsなど、
-                        幅広いクリエイティブを通して、
-                        人・企業・地域をつなぐ価値を創造するクリエイティブスタジオです。
-                    </p>
+                    Creativity<br>
+                    Meets Technology.
 
-                    <p>
-                        「伝える」ではなく「伝わる」を大切に。
-                        デザイン・映像・デジタルコンテンツを組み合わせ、
-                        ブランドの魅力を最大限に引き出します。
-                    </p>
+                </h2>
 
-                    <a href="#works" class="btn-primary">
-                        View Works
-                    </a>
+                <p>
 
-                </div>
+                    MELLENAは、
+                    Webサイト制作・映像制作・写真撮影・グラフィックデザイン・
+                    イベント企画運営・esports関連事業など、
+                    幅広いクリエイティブを展開するクリエイティブスタジオです。
+
+                </p>
+
+                <p>
+
+                    「伝える」だけではなく、
+                    「心を動かす」クリエイティブを目指し、
+                    お客様の想いをカタチにします。
+
+                </p>
 
             </div>
 
@@ -261,161 +283,117 @@
 
     </section>
 
-    <!-- ========================= -->
-    <!-- Creative -->
-    <!-- ========================= -->
+    <!-- ====================================== -->
+    <!-- Services -->
+    <!-- ====================================== -->
 
-    <section id="creative">
+    <section class="services" id="services">
 
         <div class="container">
 
-            <div class="section-title center">
+            <span class="section-tag">
 
-                <span>CREATIVE</span>
+                SERVICES
 
-                <h2>私たちが創るもの</h2>
+            </span>
 
-            </div>
+            <h2 class="section-title">
 
-            <div class="creative-grid">
+                What We Create.
 
-                <div class="creative-card">
+            </h2>
 
-                    <i class="fa-solid fa-code"></i>
+            <div class="services__grid">
 
-                    <h3>Web Development</h3>
+                <article class="service">
 
-                    <p>
-                        コーポレートサイト・LP・採用サイト・イベントサイトなど、
-                        デザインから実装まで対応。
-                    </p>
+                    <span>01</span>
 
-                </div>
-
-                <div class="creative-card">
-
-                    <i class="fa-solid fa-video"></i>
-
-                    <h3>Movie Production</h3>
+                    <h3>Web Design</h3>
 
                     <p>
-                        PR動画・学校紹介・SNS動画・イベント映像など、
-                        幅広い映像制作を行います。
+
+                        コーポレートサイト・LP・イベントサイト・
+                        GitHub Pagesなど幅広く制作します。
+
                     </p>
 
-                </div>
+                </article>
 
-                <div class="creative-card">
+                <article class="service">
 
-                    <i class="fa-solid fa-palette"></i>
+                    <span>02</span>
 
-                    <h3>Graphic Design</h3>
+                    <h3>Movie</h3>
 
                     <p>
-                        ポスター・パンフレット・ロゴ・SNS画像など、
-                        ブランドイメージをデザインします。
+
+                        学校紹介・企業PV・SNSショート動画・
+                        プロモーション映像を制作します。
+
                     </p>
 
-                </div>
+                </article>
 
-                <div class="creative-card">
+                <article class="service">
 
-                    <i class="fa-solid fa-camera"></i>
+                    <span>03</span>
+
+                    <h3>Brand Design</h3>
+
+                    <p>
+
+                        ロゴ・ポスター・パンフレット・
+                        ブランドデザイン全般を制作します。
+
+                    </p>
+
+                </article>
+
+                <article class="service">
+
+                    <span>04</span>
 
                     <h3>Photography</h3>
 
                     <p>
-                        商品・人物・イベントなど、
-                        世界観を切り取る写真撮影。
+
+                        商品撮影・人物撮影・イベント撮影など
+                        高品質な写真を提供します。
+
                     </p>
 
-                </div>
+                </article>
 
-                <div class="creative-card">
+                <article class="service">
 
-                    <i class="fa-solid fa-gamepad"></i>
-
-                    <h3>esports</h3>
-
-                    <p>
-                        大会運営・配信・企画・イベント制作まで、
-                        esportsコンテンツをプロデュース。
-                    </p>
-
-                </div>
-
-                <div class="creative-card">
-
-                    <i class="fa-solid fa-lightbulb"></i>
-
-                    <h3>Branding</h3>
-
-                    <p>
-                        コンセプト設計からビジュアルまで、
-                        ブランド価値を高めます。
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ========================= -->
-    <!-- Services -->
-    <!-- ========================= -->
-
-    <section id="services">
-
-        <div class="container">
-
-            <div class="section-title">
-
-                <span>SERVICES</span>
-
-                <h2>提供サービス</h2>
-
-            </div>
-
-            <div class="services-wrapper">
-
-                <div class="service-item">
-                    <span>01</span>
-                    <h3>Website</h3>
-                    <p>企画・UI/UX・デザイン・開発</p>
-                </div>
-
-                <div class="service-item">
-                    <span>02</span>
-                    <h3>Movie</h3>
-                    <p>撮影・編集・モーション制作</p>
-                </div>
-
-                <div class="service-item">
-                    <span>03</span>
-                    <h3>Design</h3>
-                    <p>ロゴ・パンフレット・広告制作</p>
-                </div>
-
-                <div class="service-item">
-                    <span>04</span>
-                    <h3>Branding</h3>
-                    <p>企業・学校・地域ブランド支援</p>
-                </div>
-
-                <div class="service-item">
                     <span>05</span>
-                    <h3>Event</h3>
-                    <p>イベント企画・運営・配信</p>
-                </div>
 
-                <div class="service-item">
+                    <h3>Events</h3>
+
+                    <p>
+
+                        学校イベント・地域イベント・esports大会など
+                        企画から運営までサポートします。
+
+                    </p>
+
+                </article>
+
+                <article class="service">
+
                     <span>06</span>
+
                     <h3>esports</h3>
-                    <p>大会・配信・コミュニティ運営</p>
-                </div>
+
+                    <p>
+
+                        大会運営・配信・デザイン・Web制作など
+                        esports事業を総合的に支援します。
+
+                    </p>
+
+                </article>
 
             </div>
 
@@ -423,29 +401,33 @@
 
     </section>
 
-    <!-- ========================= -->
-    <!-- Works -->
-    <!-- ========================= -->
+    <!-- ====================================== -->
+    <!-- Featured Works -->
+    <!-- ====================================== -->
 
-    <section id="works">
+    <section class="works" id="works">
 
         <div class="container">
 
-            <div class="section-title">
+            <span class="section-tag">
 
-                <span>WORKS</span>
+                FEATURED WORKS
 
-                <h2>制作実績</h2>
+            </span>
 
-            </div>
+            <h2 class="section-title">
 
-            <div class="works-grid">
+                Selected Projects.
 
-                <article class="work-card">
+            </h2>
 
-                    <img src="assets/works/work1.webp" alt="Web">
+            <div class="works__grid">
 
-                    <div class="work-overlay">
+                <article class="work">
+
+                    <img src="assets/works/work01.jpg" alt="Project">
+
+                    <div class="work__content">
 
                         <span>WEB DESIGN</span>
 
@@ -455,41 +437,41 @@
 
                 </article>
 
-                <article class="work-card">
+                <article class="work work--large">
 
-                    <img src="assets/works/work2.webp" alt="Movie">
+                    <img src="assets/works/work02.jpg" alt="Project">
 
-                    <div class="work-overlay">
+                    <div class="work__content">
 
                         <span>MOVIE</span>
 
-                        <h3>Promotion Movie</h3>
+                        <h3>School Promotion</h3>
 
                     </div>
 
                 </article>
 
-                <article class="work-card">
+                <article class="work">
 
-                    <img src="assets/works/work3.webp" alt="Event">
+                    <img src="assets/works/work03.jpg" alt="Project">
 
-                    <div class="work-overlay">
+                    <div class="work__content">
 
                         <span>EVENT</span>
 
-                        <h3>Creative Event</h3>
+                        <h3>esports Tournament</h3>
 
                     </div>
 
                 </article>
 
-                <article class="work-card">
+                <article class="work">
 
-                    <img src="assets/works/work4.webp" alt="Branding">
+                    <img src="assets/works/work04.jpg" alt="Project">
 
-                    <div class="work-overlay">
+                    <div class="work__content">
 
-                        <span>BRANDING</span>
+                        <span>GRAPHIC</span>
 
                         <h3>Brand Identity</h3>
 
@@ -497,29 +479,15 @@
 
                 </article>
 
-                <article class="work-card">
+                <article class="work">
 
-                    <img src="assets/works/work5.webp" alt="Photo">
+                    <img src="assets/works/work05.jpg" alt="Project">
 
-                    <div class="work-overlay">
+                    <div class="work__content">
 
                         <span>PHOTO</span>
 
-                        <h3>Photography</h3>
-
-                    </div>
-
-                </article>
-
-                <article class="work-card">
-
-                    <img src="assets/works/work6.webp" alt="esports">
-
-                    <div class="work-overlay">
-
-                        <span>ESPORTS</span>
-
-                        <h3>Tournament Production</h3>
+                        <h3>Creative Shooting</h3>
 
                     </div>
 
@@ -531,43 +499,78 @@
 
     </section>
 
-    <!-- ========================= -->
-    <!-- Numbers -->
-    <!-- ========================= -->
+    <!-- ====================================== -->
+        <!-- ====================================== -->
+    <!-- Showreel -->
+    <!-- ====================================== -->
 
-    <section id="numbers">
+    <section class="showreel">
 
         <div class="container">
 
-            <div class="number-box">
+            <span class="section-tag">
+                SHOWREEL
+            </span>
 
-                <h2 data-count="100">0</h2>
+            <h2 class="section-title">
+
+                Watch Our Creative Story.
+
+            </h2>
+
+            <div class="showreel__video">
+
+                <video
+                    controls
+                    poster="assets/showreel.jpg">
+
+                    <source src="assets/showreel.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ====================================== -->
+    <!-- Numbers -->
+    <!-- ====================================== -->
+
+    <section class="numbers">
+
+        <div class="container">
+
+            <div class="number">
+
+                <h2 data-count="120">0</h2>
 
                 <p>Projects</p>
 
             </div>
 
-            <div class="number-box">
+            <div class="number">
 
-                <h2 data-count="50">0</h2>
+                <h2 data-count="35">0</h2>
 
                 <p>Clients</p>
 
             </div>
 
-            <div class="number-box">
+            <div class="number">
 
-                <h2 data-count="6">0</h2>
+                <h2 data-count="8">0</h2>
 
                 <p>Creative Fields</p>
 
             </div>
 
-            <div class="number-box">
+            <div class="number">
 
-                <h2>∞</h2>
+                <h2 data-count="100">0</h2>
 
-                <p>Ideas</p>
+                <p>% Passion</p>
 
             </div>
 
@@ -575,72 +578,55 @@
 
     </section>
 
-        <!-- ========================= -->
+    <!-- ====================================== -->
     <!-- News -->
-    <!-- ========================= -->
+    <!-- ====================================== -->
 
-    <section id="news">
+    <section class="news">
 
         <div class="container">
 
-            <div class="section-title">
+            <span class="section-tag">
 
-                <span>NEWS</span>
+                NEWS
 
-                <h2>最新情報</h2>
+            </span>
 
-            </div>
+            <h2 class="section-title">
 
-            <div class="news-grid">
+                Latest Updates.
 
-                <article class="news-card">
+            </h2>
 
-                    <div class="news-date">
-                        2026.07.06
-                    </div>
+            <div class="news__list">
+
+                <article class="news__item">
+
+                    <span>2026.07.06</span>
 
                     <h3>
-                        MELLENA公式サイト リニューアルプロジェクト開始
+                        MELLENA Official Website Renewal Started
                     </h3>
-
-                    <p>
-                        新しいブランドサイトの制作を開始しました。
-                        よりクリエイティブな世界観を発信していきます。
-                    </p>
 
                 </article>
 
-                <article class="news-card">
+                <article class="news__item">
 
-                    <div class="news-date">
-                        2026.06.18
-                    </div>
+                    <span>2026.06.22</span>
 
                     <h3>
-                        新しい映像制作プロジェクトを公開
+                        Creative Portfolio Updated
                     </h3>
-
-                    <p>
-                        学校紹介・イベント映像など、
-                        新しい制作実績を追加しました。
-                    </p>
 
                 </article>
 
-                <article class="news-card">
+                <article class="news__item">
 
-                    <div class="news-date">
-                        2026.05.30
-                    </div>
+                    <span>2026.05.18</span>
 
                     <h3>
-                        esportsイベント運営サポート開始
+                        esports Event Production Announced
                     </h3>
-
-                    <p>
-                        イベント企画から配信・運営まで
-                        ワンストップで対応しています。
-                    </p>
 
                 </article>
 
@@ -650,65 +636,57 @@
 
     </section>
 
-    <!-- ========================= -->
+    <!-- ====================================== -->
     <!-- Contact -->
-    <!-- ========================= -->
+    <!-- ====================================== -->
 
-    <section id="contact">
+    <section class="contact" id="contact">
 
         <div class="container">
 
-            <div class="section-title center">
+            <span class="section-tag">
 
-                <span>CONTACT</span>
+                CONTACT
 
-                <h2>Let's Create Together.</h2>
+            </span>
 
-                <p>
-                    Web制作・映像制作・イベント・デザインなど、
-                    お気軽にご相談ください。
-                </p>
+            <h2 class="section-title">
 
-            </div>
+                Let's Create Together.
+
+            </h2>
+
+            <p class="contact__lead">
+
+                Web制作・映像制作・イベント・デザインなど、
+                お気軽にお問い合わせください。
+
+            </p>
 
             <form class="contact-form">
 
-                <div class="form-group">
+                <input
+                    type="text"
+                    placeholder="お名前"
+                    required>
 
-                    <input
-                        type="text"
-                        placeholder="お名前"
-                        required>
+                <input
+                    type="email"
+                    placeholder="メールアドレス"
+                    required>
 
-                </div>
+                <input
+                    type="text"
+                    placeholder="会社名（任意）">
 
-                <div class="form-group">
+                <textarea
+                    rows="7"
+                    placeholder="お問い合わせ内容"
+                    required></textarea>
 
-                    <input
-                        type="email"
-                        placeholder="メールアドレス"
-                        required>
-
-                </div>
-
-                <div class="form-group">
-
-                    <input
-                        type="text"
-                        placeholder="会社名（任意）">
-
-                </div>
-
-                <div class="form-group">
-
-                    <textarea
-                        rows="7"
-                        placeholder="お問い合わせ内容"
-                        required></textarea>
-
-                </div>
-
-                <button type="submit" class="submit-btn">
+                <button
+                    type="submit"
+                    class="btn btn-primary">
 
                     SEND MESSAGE
 
@@ -720,101 +698,51 @@
 
     </section>
 
-    <!-- ========================= -->
-    <!-- CTA -->
-    <!-- ========================= -->
-
-    <section id="cta">
-
-        <div class="container">
-
-            <h2>
-
-                Creativity changes the future.
-
-            </h2>
-
-            <p>
-
-                あなたの想いを、
-                クリエイティブの力で形にします。
-
-            </p>
-
-            <a href="#contact" class="btn-primary">
-
-                Contact Us
-
-            </a>
-
-        </div>
-
-    </section>
-
-    <!-- ========================= -->
+    <!-- ====================================== -->
     <!-- Footer -->
-    <!-- ========================= -->
+    <!-- ====================================== -->
 
-    <footer>
+    <footer class="footer">
 
         <div class="container">
 
-            <div class="footer-logo">
+            <div class="footer__top">
 
-                <img
-                    src="assets/logo.svg"
-                    alt="MELLENA">
+                <div>
 
-            </div>
+                    <h2 class="footer__logo">
 
-            <div class="footer-links">
+                        MELLENA
 
-                <a href="#about">
-                    ABOUT
-                </a>
+                    </h2>
 
-                <a href="#creative">
-                    CREATIVE
-                </a>
+                    <p>
 
-                <a href="#services">
-                    SERVICES
-                </a>
+                        Creative Studio
 
-                <a href="#works">
-                    WORKS
-                </a>
+                    </p>
 
-                <a href="#contact">
-                    CONTACT
-                </a>
+                </div>
+
+                <div class="footer__menu">
+
+                    <a href="#about">ABOUT</a>
+                    <a href="#services">SERVICES</a>
+                    <a href="#works">WORKS</a>
+                    <a href="#contact">CONTACT</a>
+
+                </div>
 
             </div>
 
-            <div class="footer-social">
+            <div class="footer__bottom">
 
-                <a href="#">
-                    <i class="fab fa-instagram"></i>
-                </a>
+                <p>
 
-                <a href="#">
-                    <i class="fab fa-x-twitter"></i>
-                </a>
+                    © 2026 MELLENA Creative Studio.
+                    All Rights Reserved.
 
-                <a href="#">
-                    <i class="fab fa-youtube"></i>
-                </a>
-
-                <a href="#">
-                    <i class="fab fa-github"></i>
-                </a>
-
-            </div>
-
-            <div class="footer-copy">
-
-                © 2026 MELLENA Creative Studio.
-                All Rights Reserved.
+                </p>
 
             </div>
 
@@ -822,58 +750,42 @@
 
     </footer>
 
-    <!-- ========================= -->
-    <!-- Mobile Navigation -->
-    <!-- ========================= -->
+    <!-- ====================================== -->
+    <!-- Mobile Menu -->
+    <!-- ====================================== -->
 
-    <div class="mobile-menu">
+    <nav class="mobile-nav" id="mobileNav">
 
         <a href="#about">ABOUT</a>
-
-        <a href="#creative">CREATIVE</a>
-
         <a href="#services">SERVICES</a>
-
         <a href="#works">WORKS</a>
-
         <a href="#contact">CONTACT</a>
 
-    </div>
+    </nav>
 
-    <!-- ========================= -->
+    <!-- ====================================== -->
     <!-- Back To Top -->
-    <!-- ========================= -->
+    <!-- ====================================== -->
 
-    <button id="toTop">
+    <button
+        class="back-top"
+        id="backTop">
 
         <i class="fa-solid fa-arrow-up"></i>
 
     </button>
 
-    <!-- ========================= -->
-    <!-- Cursor Label -->
-    <!-- ========================= -->
+    <!-- ====================================== -->
+    <!-- JS Libraries -->
+    <!-- ====================================== -->
 
-    <div class="cursor-text">
-
-        VIEW
-
-    </div>
-
-    <!-- ========================= -->
-    <!-- End -->
-    <!-- ========================= -->
-
-    <!-- GSAP -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
 
-    <!-- Lenis -->
     <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
 
-    <!-- Vanilla Tilt -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r160/three.min.js"></script>
 
     <script src="script.js"></script>
 
