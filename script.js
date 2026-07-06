@@ -7,11 +7,10 @@ console.log("Lenis:", window.Lenis);
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    gsap.registerPlugin(ScrollTrigger);
-
-    /* ======================================================
-       LENIS (Smooth Scroll)
-    ====================================================== */
+    if (typeof Lenis === "undefined") {
+        console.error("Lenisが読み込まれてない");
+        return;
+    }
 
     const lenis = new Lenis({
         duration: 1.2,
@@ -23,7 +22,9 @@ document.addEventListener("DOMContentLoaded", () => {
         lenis.raf(time);
         requestAnimationFrame(raf);
     }
+
     requestAnimationFrame(raf);
+});
 
     /* ======================================================
        ELEMENTS
