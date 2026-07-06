@@ -1,170 +1,277 @@
 /* ==========================================================
    MELLENA Official Website
-   script.js
-   Part1
+   script.js FINAL VERSION
 ========================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* ==========================================
-       GSAP
-    ========================================== */
-
     gsap.registerPlugin(ScrollTrigger);
 
-    /* ==========================================
-       Lenis
-    ========================================== */
+    /* ======================================================
+       LENIS (Smooth Scroll)
+    ====================================================== */
 
     const lenis = new Lenis({
-        duration: 1.15,
+        duration: 1.2,
         smoothWheel: true,
-        wheelMultiplier: 1
+        smoothTouch: false
     });
 
     function raf(time) {
         lenis.raf(time);
         requestAnimationFrame(raf);
     }
-
     requestAnimationFrame(raf);
 
-    /* ==========================================
-       Loading
-    ========================================== */
+    /* ======================================================
+       ELEMENTS
+    ====================================================== */
 
     const loading = document.getElementById("loading");
     const progress = document.getElementById("loadingProgress");
-    const text = document.getElementById("loadingText");
+    const loadingText = document.getElementById("loadingText");
+
+    const header = document.getElementById("header");
+    const mobileNav = document.getElementById("mobileNav");
+    const menuButton = document.getElementById("menuButton");
+    const backTop = document.getElementById("backTop");
+
+    const cursor = document.querySelector(".cursor");
+    const cursorDot = document.querySelector(".cursor-dot");
+    const cursorLabel = document.querySelector(".cursor-label");
+
+    /* ======================================================
+       LOADING
+    ====================================================== */
 
     let percent = 0;
 
-    const timer = setInterval(() => {
+    const loader = setInterval(() => {
 
         percent++;
 
         progress.style.width = percent + "%";
-        text.textContent = `Loading ${percent}%`;
+        loadingText.textContent = `Loading ${percent}%`;
 
         if (percent >= 100) {
 
-            clearInterval(timer);
+            clearInterval(loader);
 
             gsap.to("#loading", {
                 opacity: 0,
                 duration: 0.8,
-                delay: 0.3,
-                onComplete() {
-
+                onComplete: () => {
                     loading.style.display = "none";
-
+                    heroAnimation();
                 }
             });
-
-            heroAnimation();
-
         }
 
-    }, 18);
+    }, 15);
 
-    /* ==========================================
-       Header
-    ========================================== */
+    /* ======================================================
+       HERO ANIMATION
+    ====================================================== */
 
-    const header = document.getElementById("header");
+    function heroAnimation() {
+
+        gsap.timeline()
+
+            .from(".hero__eyebrow", { y: 30, opacity: 0 })
+            .from(".hero__title", { y: 80, opacity: 0 }, "-=0.4")
+            .from(".hero__subtitle", { y: 40, opacity: 0 }, "-=0.3")
+            .from(".hero__text", { y: 30, opacity: 0 }, "-=0.3")
+            .from(".hero__buttons", { y: 20, opacity: 0 }, "-=0.3")
+            .from(".scroll-indicator", { opacity: 0 }, "-=0.2");
+
+    }
+
+    /* ======================================================
+       HEADER SCROLL
+    ====================================================== */
 
     window.addEventListener("scroll", () => {
 
-        if (window.scrollY > 60) {
-
-            header.classList.add("scrolled");
-
-        } else {
-
-            header.classList.remove("scrolled");
-
-        }
+        header.classList.toggle("scrolled", window.scrollY > 80);
+        backTop.classList.toggle("show", window.scrollY > 600);
 
     });
 
-    /* ==========================================
-       Mobile Menu
-    ========================================== */
-
-    const menuButton = document.getElementById("menuButton");
-    const mobileNav = document.getElementById("mobileNav");
+    /* ======================================================
+       MOBILE MENU
+    ====================================================== */
 
     menuButton.addEventListener("click", () => {
-
         mobileNav.classList.toggle("active");
+    });
+
+    mobileNav.querySelectorAll("a").forEach(a => {
+        a.addEventListener("click", () => {
+            mobileNav.classList.remove("active");
+        });
+    });
+
+    /* ======================================================
+       BACK TO TOP
+    ====================================================== */
+
+    backTop.addEventListener("click", () => {
+        lenis.scrollTo(0);
+    });
+
+    /* ======================================================
+       CURSOR
+    ====================================================== */
+
+    let mouseX = 0;
+    let mouseY = 0;
+
+    document.addEventListener("mousemove", (e) => {
+
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+
+        cursor.style.transform = `translate(${mouseX}px,${mouseY}px)`;
+        cursorDot.style.transform = `translate(${mouseX}px,${mouseY}px)`;
+        cursorLabel.style.transform = `translate(${mouseX}px,${mouseY}px)`;
 
     });
 
-    mobileNav.querySelectorAll("a").forEach(link => {
+    const hoverTargets = document.querySelectorAll("a,button,.work");
 
-        link.addEventListener("click", () => {
+    hoverTargets.forEach(el => {
 
-            mobileNav.classList.remove("active");
+        el.addEventListener("mouseenter", () => {
+            cursor.classList.add("active");
+            cursorLabel.classList.add("show");
 
+            if (el.classList.contains("work")) {
+                cursorLabel.textContent = "VIEW";
+            } else {
+                cursorLabel.textContent = "OPEN";
+            }
+        });
+
+        el.addEventListener("mouseleave", () => {
+            cursor.classList.remove("active");
+            cursorLabel.classList.remove("show");
         });
 
     });
 
-    /* ==========================================
-       Hero Animation
-    ========================================== */
+    /* ======================================================
+       SCROLL ANIMATIONS
+    ====================================================== */
 
-    function heroAnimation() {
+    gsap.utils.toArray("section").forEach(sec => {
 
-        const tl = gsap.timeline();
-
-        tl.from(".hero__eyebrow", {
-
-            y: 40,
+        gsap.from(sec, {
             opacity: 0,
-            duration: .8
+            y: 60,
+            duration: 1,
+            scrollTrigger: {
+                trigger: sec,
+                start: "top 80%"
+            }
+        });
 
-        })
+    });
 
-        .from(".hero__title", {
+    /* ======================================================
+       SERVICES / WORKS
+    ====================================================== */
 
-            y: 80,
-            opacity: 0,
-            duration: 1
+    gsap.from(".service", {
+        y: 60,
+        opacity: 0,
+        stagger: 0.1,
+        scrollTrigger: {
+            trigger: ".services",
+            start: "top 80%"
+        }
+    });
 
-        }, "-=.4")
+    gsap.from(".work", {
+        scale: 0.9,
+        opacity: 0,
+        stagger: 0.1,
+        scrollTrigger: {
+            trigger: ".works",
+            start: "top 80%"
+        }
+    });
 
-        .from(".hero__subtitle", {
+    /* ======================================================
+       NUMBERS COUNTER
+    ====================================================== */
 
-            y: 50,
-            opacity: 0,
-            duration: .8
+    const counters = document.querySelectorAll(".number h2");
 
-        }, "-=.5")
+    counters.forEach(counter => {
 
-        .from(".hero__text", {
+        const target = +counter.dataset.count;
 
-            y: 40,
-            opacity: 0,
-            duration: .8
+        ScrollTrigger.create({
+            trigger: counter,
+            start: "top 85%",
+            once: true,
+            onEnter: () => {
 
-        }, "-=.5")
+                let obj = { val: 0 };
 
-        .from(".hero__buttons", {
+                gsap.to(obj, {
+                    val: target,
+                    duration: 2,
+                    ease: "power2.out",
+                    onUpdate: () => {
+                        counter.textContent = Math.floor(obj.val);
+                    }
+                });
 
-            y: 30,
-            opacity: 0,
-            duration: .8
+            }
+        });
 
-        }, "-=.4")
+    });
 
-        .from(".scroll-indicator", {
+    /* ======================================================
+       PARALLAX
+    ====================================================== */
 
-            opacity: 0,
-            duration: .8
+    gsap.to(".hero__video", {
+        y: 100,
+        scrollTrigger: {
+            trigger: ".hero",
+            start: "top top",
+            scrub: true
+        }
+    });
 
-        }, "-=.2");
+    /* ======================================================
+       NEWS
+    ====================================================== */
 
-    }
+    gsap.from(".news__item", {
+        x: -50,
+        opacity: 0,
+        stagger: 0.2,
+        scrollTrigger: {
+            trigger: ".news",
+            start: "top 80%"
+        }
+    });
+
+    /* ======================================================
+       CONTACT
+    ====================================================== */
+
+    gsap.from(".contact-form input, .contact-form textarea, .contact-form button", {
+        y: 30,
+        opacity: 0,
+        stagger: 0.1,
+        scrollTrigger: {
+            trigger: ".contact",
+            start: "top 80%"
+        }
+    });
 
 });
