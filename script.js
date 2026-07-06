@@ -7,8 +7,8 @@ console.log("Lenis:", window.Lenis);
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    if (typeof Lenis === "undefined") {
-        console.error("Lenisが読み込まれてない");
+    if (!window.Lenis) {
+        console.error("Lenis読み込めてない（CDN問題）");
         return;
     }
 
