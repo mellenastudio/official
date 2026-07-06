@@ -295,3 +295,16 @@ if (typeof Lenis !== "undefined") {
 
     requestAnimationFrame(raf);
 }
+
+function heroAnimation() {
+
+    if (!window.gsap) return;
+
+    gsap.timeline()
+        .from(".hero__eyebrow", { y: 30, opacity: 0 })
+        .from(".hero__title", { y: 80, opacity: 0 }, "-=0.4")
+        .from(".hero__subtitle", { y: 40, opacity: 0 }, "-=0.3")
+        .from(".hero__text", { y: 30, opacity: 0 }, "-=0.3")
+        .from(".hero__buttons", { y: 20, opacity: 0 }, "-=0.3")
+        .from(".scroll-indicator", { opacity: 0 }, "-=0.2");
+}
