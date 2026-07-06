@@ -3,6 +3,8 @@
    script.js FINAL VERSION
 ========================================================== */
 
+console.log("Lenis:", window.Lenis);
+
 document.addEventListener("DOMContentLoaded", () => {
 
     gsap.registerPlugin(ScrollTrigger);
