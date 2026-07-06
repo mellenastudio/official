@@ -2072,7 +2072,7 @@ section {
 
 :root {
     --bg: #0b0f1a;
-    --text: #ffffff;
+    --text: #111;
     --sub: rgba(255,255,255,0.7);
     --accent: #6c5ce7;
 }
