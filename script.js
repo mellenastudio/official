@@ -8,7 +8,7 @@ console.log("Lenis:", window.Lenis);
 document.addEventListener("DOMContentLoaded", () => {
 
     if (!window.Lenis) {
-        console.error("Lenis読み込めてない（CDN問題）");
+        console.error("Lenis読み込み失敗（CDN問題）");
         return;
     }
 
