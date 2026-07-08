@@ -2198,3 +2198,65 @@ font-size:42px;
 }
 
 }
+
+/* ===========================
+   Footer Social
+=========================== */
+
+.footer__social h4{
+
+    font-size:13px;
+
+    letter-spacing:.2em;
+
+    margin-bottom:18px;
+
+    opacity:.7;
+
+}
+
+.social-links{
+
+    display:flex;
+
+    gap:18px;
+
+}
+
+.social-links a{
+
+    width:48px;
+
+    height:48px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    color:#fff;
+
+    text-decoration:none;
+
+    transition:.35s;
+
+}
+
+.social-links a:hover{
+
+    transform:translateY(-6px);
+
+    background:#4d8cff;
+
+    border-color:#4d8cff;
+
+    box-shadow:0 10px 30px rgba(77,140,255,.35);
+
+}
