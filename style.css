@@ -563,11 +563,13 @@ HERO
 
 .hero__content{
 
-    position:relative;
+    position:absolute;
 
-    z-index:5;
+    left:60px;
 
-    text-align:center;
+    bottom:60px;
+
+    z-index:10;
 
 }
 
