@@ -2266,3 +2266,93 @@ font-size:42px;
     box-shadow:0 10px 30px rgba(77,140,255,.35);
 
 }
+
+/* ===========================
+   HERO - Kyoto Tech Style
+=========================== */
+
+.hero__content{
+    position:absolute;
+    left:60px;
+    bottom:70px;
+    z-index:10;
+    text-align:left;
+}
+
+.hero-copy{
+    max-width:1100px;
+    margin:0 0 30px;
+
+    font-size:clamp(52px, 7vw, 110px);
+    font-weight:900;
+    line-height:.92;
+    letter-spacing:-0.02em;
+    text-transform:uppercase;
+
+    color:#fff;
+    text-shadow:0 6px 30px rgba(0,0,0,.45);
+}
+
+.hero-label{
+    display:inline-block;
+
+    background:#000;
+    color:#fff;
+
+    padding:18px 36px;
+
+    font-size:clamp(18px, 2vw, 32px);
+    font-weight:700;
+    letter-spacing:.04em;
+}
+
+.scroll-indicator{
+    position:absolute;
+    right:38px;
+    bottom:38px;
+
+    display:flex;
+    align-items:center;
+    gap:16px;
+
+    writing-mode:vertical-rl;
+    z-index:10;
+}
+
+.scroll-indicator span{
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.2em;
+    color:#fff;
+}
+
+.scroll-line{
+    width:2px;
+    height:84px;
+    background:#fff;
+}
+
+@media (max-width:768px){
+
+    .hero__content{
+        left:24px;
+        right:24px;
+        bottom:40px;
+    }
+
+    .hero-copy{
+        font-size:clamp(40px, 11vw, 64px);
+        line-height:1;
+    }
+
+    .hero-label{
+        font-size:16px;
+        padding:14px 20px;
+    }
+
+    .scroll-indicator{
+        right:16px;
+        bottom:20px;
+    }
+
+}
