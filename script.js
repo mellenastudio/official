@@ -7,6 +7,14 @@ console.log("Lenis:", window.Lenis);
 
 document.addEventListener("DOMContentLoaded", () => {
 
+   const heroVideo = document.querySelector(".hero__video");
+
+   if (heroVideo) {
+    heroVideo.play().catch(() => {
+        console.log("Autoplay blocked");
+       });
+   }
+
     if (!window.Lenis) {
         console.error("Lenis読み込み失敗（CDN問題）");
         return;
