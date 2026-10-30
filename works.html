@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080808">
+  <meta name="description" content="Mellena Studioの制作実績。Webサイト、デジタルツール、デザインなどのクリエイティブ作品をご紹介します。">
+
+  <title>WORKS | Mellena Studio</title>
+
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* ========================================
+       MELLENA STUDIO
+       WORKS PAGE
+    ======================================== */
+
+    .works-page {
+      --works-yellow: #e8c84a;
+      --works-bg: #080808;
+      --works-panel: #11110e;
+      --works-text: #f7f7f4;
+      --works-muted: #999890;
+      --works-border: #30302a;
+
+      background: var(--works-bg);
+      color: var(--works-text);
+      overflow-x: clip;
+    }
+
+    .works-page *,
+    .works-page *::before,
+    .works-page *::after {
+      box-sizing: border-box;
+    }
+
+    .works-page .works-container {
+      width: min(1180px, 88%);
+      margin: 0 auto;
+    }
+
+    .works-page .works-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--works-yellow);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+    }
+
+    .works-page .works-label::before {
+      content: "";
+      width: 24px;
+      height: 1px;
+      background: var(--works-yellow);
+    }
+
+    .works-page .works-heading {
+      margin: 24px 0;
+      font-size: clamp(43px, 8vw, 100px);
+      font-weight: 900;
+      line-height: 0.98;
+      letter-spacing: -0.075em;
+    }
+
+    .works-page .works-heading span {
+      color: var(--works-yellow);
+    }
+
+    .works-page .works-description {
+      max-width: 620px;
+      color: var(--works-muted);
+      font-size: 13px;
+      line-height: 2.2;
+    }
+
+    /* HERO */
+
+    .works-page .works-hero {
+      position: relative;
+      isolation: isolate;
+      padding: 140px 0 95px;
+      border-bottom: 1px solid var(--works-border);
+    }
+
+    .works-page .works-hero::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      right: -10%;
+      width: min(680px, 80vw);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: radial-gradient(
+        circle,
+        rgba(232, 200, 74, 0.12),
+        rgba(232, 200, 74, 0.025) 40%,
+        transparent 70%
+      );
+      pointer-events: none;
+    }
+
+    .works-page .works-index {
+      margin-bottom: 30px;
+      color: #77766e;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+    }
+
+    .works-page .works-index span {
+      color: var(--works-yellow);
+    }
+
+    .works-page .works-hero h1 {
+      margin: 0;
+      font-size: clamp(65px, 13vw, 150px);
+      font-weight: 900;
+      line-height: 0.9;
+      letter-spacing: -0.09em;
+    }
+
+    .works-page .works-hero h1 span {
+      display: block;
+      color: var(--works-yellow);
+    }
+
+    .works-page .works-hero-subtitle {
+      margin-top: 28px;
+      color: #b4b3ab;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      line-height: 2;
+    }
+
+    .works-page .works-hero-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 25px;
+      margin-top: 45px;
+    }
+
+    .works-page .works-hero-bottom p {
+      max-width: 520px;
+      margin: 0;
+      color: var(--works-muted);
+      font-size: 13px;
+      line-height: 2.1;
+    }
+
+    .works-page .works-scroll-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+      color: var(--works-yellow);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-decoration: none;
+    }
+
+    .works-page .works-scroll-link span {
+      width: 30px;
+      height: 1px;
+      background: var(--works-yellow);
+    }
+
+    /* FEATURE STRIP */
+
+    .works-page .works-strip {
+      padding: 25px 0;
+      border-bottom: 1px solid var(--works-border);
+    }
+
+    .works-page .works-strip-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .works-page .works-strip-item {
+      color: #88877f;
+      font-size: 10px;
+      letter-spacing: 0.13em;
+      white-space: nowrap;
+    }
+
+    .works-page .works-strip-item span {
+      margin-right: 9px;
+      color: var(--works-yellow);
+    }
+
+    /* WORKS SECTION */
+
+    .works-page .works-main {
+      padding: 110px 0 125px;
+    }
+
+    .works-page .works-section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 25px;
+      margin-bottom: 42px;
+    }
+
+    .works-page .works-section-heading h2 {
+      margin: 18px 0 0;
+      font-size: clamp(30px, 5vw, 55px);
+      font-weight: 800;
+      letter-spacing: -0.065em;
+    }
+
+    .works-page .works-section-heading h2 span {
+      color: var(--works-yellow);
+    }
+
+    .works-page .works-count {
+      flex-shrink: 0;
+      color: #88877f;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+    }
+
+    .works-page .works-count strong {
+      color: var(--works-yellow);
+      font-size: 22px;
+    }
+
+    /* FILTER */
+
+    .works-page .works-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-bottom: 42px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--works-border);
+    }
+
+    .works-page .works-filter {
+      padding: 11px 18px;
+      border: 1px solid #35352f;
+      border-radius: 0;
+      background: transparent;
+      color: #96958d;
+      font-family: inherit;
+      font-size: 11px;
+      cursor: pointer;
+      transition:
+        color 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    .works-page .works-filter:hover,
+    .works-page .works-filter.is-active {
+      border-color: var(--works-yellow);
+      background: var(--works-yellow);
+      color: #080808;
+    }
+
+    .works-page .works-filter:focus-visible {
+      outline: 2px solid var(--works-yellow);
+      outline-offset: 4px;
+    }
+
+    /* GRID */
+
+    .works-page .works-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 45px 25px;
+    }
+
+    .works-page .work-card[hidden] {
+      display: none !important;
+    }
+
+    .works-page .work-card {
+      min-width: 0;
+      animation: worksCardIn 0.45s ease both;
+    }
+
+    @keyframes worksCardIn {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* VISUAL */
+
+    .works-page .work-visual {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 1.45 / 1;
+      min-height: 245px;
+      overflow: hidden;
+      border: 1px solid #30302a;
+      background: #10100d;
+      isolation: isolate;
+    }
+
+    .works-page .work-visual::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      background: radial-gradient(
+        circle at 50% 50%,
+        rgba(232, 200, 74, 0.14),
+        transparent 65%
+      );
+      transition: transform 0.6s ease;
+    }
+
+    .works-page .work-visual::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      background-image:
+        linear-gradient(
+          rgba(232, 200, 74, 0.045) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(232, 200, 74, 0.045) 1px,
+          transparent 1px
+        );
+      background-size: 35px 35px;
+    }
+
+    .works-page .work-card:hover .work-visual::before {
+      transform: scale(1.4);
+    }
+
+    .works-page .work-visual-content {
+      width: 100%;
+      padding: 25px;
+      text-align: center;
+      transition: transform 0.45s ease;
+    }
+
+    .works-page .work-card:hover .work-visual-content {
+      transform: scale(1.04);
+    }
+
+    .works-page .work-visual-kicker {
+      display: block;
+      margin-bottom: 15px;
+      color: #a99a58;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+    }
+
+    .works-page .work-visual-title {
+      margin: 0;
+      color: #f5f2e7;
+      font-size: clamp(27px, 4.7vw, 53px);
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.07em;
+      overflow-wrap: anywhere;
+    }
+
+    .works-page .work-visual-title span {
+      color: var(--works-yellow);
+    }
+
+    .works-page .work-visual-subtitle {
+      margin-top: 18px;
+      color: #a5a399;
+      font-size: 9px;
+      letter-spacing: 0.15em;
+    }
+
+    .works-page .work-visual-number {
+      position: absolute;
+      right: 17px;
+      bottom: 15px;
+      color: #8c8256;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+    }
+
+    /* VISUAL THEMES */
+
+    .works-page .visual-web {
+      background:
+        linear-gradient(
+          135deg,
+          rgba(232, 200, 74, 0.08),
+          transparent 55%
+        ),
+        #0b0b09;
+    }
+
+    .works-page .visual-tool {
+      background:
+        radial-gradient(
+          ellipse at 80% 20%,
+          rgba(232, 200, 74, 0.17),
+          transparent 50%
+        ),
+        #11110e;
+    }
+
+    .works-page .visual-design {
+      background:
+        linear-gradient(
+          160deg,
+          #15150f,
+          #090909 70%
+        );
+    }
+
+    .works-page .visual-creative {
+      background:
+        radial-gradient(
+          circle at 30% 80%,
+          rgba(232, 200, 74, 0.12),
+          transparent 55%
+        ),
+        #10100d;
+    }
+
+    .works-page .visual-community {
+      background:
+        linear-gradient(
+          45deg,
+          #14130e,
+          #080808 60%
+        );
+    }
+
+    /* CARD INFO */
+
+    .works-page .work-info {
+      padding-top: 22px;
+    }
+
+    .works-page .work-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .works-page .work-category {
+      color: var(--works-yellow);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+    }
+
+    .works-page .work-status {
+      padding: 5px 8px;
+      border: 1px solid #46453a;
+      color: #aaa99f;
+      font-size: 9px;
+    }
+
+    .works-page .work-info h3 {
+      margin: 0;
+      font-size: clamp(22px, 3vw, 31px);
+      font-weight: 800;
+      line-height: 1.3;
+      letter-spacing: -0.045em;
+    }
+
+    .works-page .work-info > p {
+      margin: 13px 0 0;
+      color: var(--works-muted);
+      font-size: 12px;
+      line-height: 2.1;
+    }
+
+    .works-page .work-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      margin-top: 22px;
+      padding-top: 15px;
+      border-top: 1px solid #292923;
+    }
+
+    .works-page .work-bottom span {
+      color: #77766e;
+      font-size: 9px;
+      letter-spacing: 0.1em;
+    }
+
+    .works-page .work-arrow {
+      color: var(--works-yellow) !important;
+      font-size: 20px !important;
+      transition: transform 0.25s ease;
+    }
+
+    .works-page .work-card:hover .work-arrow {
+      transform: translateX(5px);
+    }
+
+    /* PLACEHOLDER NOTE */
+
+    .works-page .works-note {
+      margin-top: 45px;
+      padding: 20px 22px;
+      border-left: 2px solid var(--works-yellow);
+      background: #10100d;
+      color: #89887f;
+      font-size: 11px;
+      line-height: 2;
+    }
+
+    .works-page .works-note strong {
+      color: #d5c37a;
+    }
+
+    /* EMPTY STATE */
+
+    .works-page .works-empty {
+      display: none;
+      padding: 55px 20px;
+      border: 1px solid var(--works-border);
+      color: var(--works-muted);
+      font-size: 13px;
+      text-align: center;
+      line-height: 2;
+    }
+
+    .works-page .works-empty.is-visible {
+      display: block;
+    }
+
+    /* CTA */
+
+    .works-page .works-cta {
+      padding: 110px 0 120px;
+      border-top: 1px solid var(--works-border);
+      background:
+        radial-gradient(
+          ellipse at 50% 100%,
+          rgba(232, 200, 74, 0.1),
+          transparent 60%
+        ),
+        #0c0c0a;
+      text-align: center;
+    }
+
+    .works-page .works-cta .works-heading {
+      font-size: clamp(43px, 8.5vw, 100px);
+    }
+
+    .works-page .works-cta > .works-container > p {
+      max-width: 520px;
+      margin: 0 auto;
+      color: var(--works-muted);
+      font-size: 13px;
+      line-height: 2.2;
+    }
+
+    .works-page .works-cta-button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      min-width: 220px;
+      margin-top: 32px;
+      padding: 17px 25px;
+      border: 1px solid var(--works-yellow);
+      color: var(--works-yellow) !important;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-decoration: none;
+      transition:
+        color 0.3s ease,
+        background 0.3s ease,
+        gap 0.3s ease;
+    }
+
+    .works-page .works-cta-button:hover {
+      gap: 42px;
+      background: var(--works-yellow);
+      color: #080808 !important;
+    }
+
+    /* FOOTER */
+
+    .works-page .works-footer {
+      padding: 28px 0;
+      border-top: 1px solid #292923;
+    }
+
+    .works-page .works-footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .works-page .works-footer-brand {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+    }
+
+    .works-page .works-footer-brand span {
+      color: var(--works-yellow);
+    }
+
+    .works-page .works-footer-copy {
+      color: #77766e;
+      font-size: 10px;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 760px) {
+      .works-page .works-container {
+        width: 88%;
+      }
+
+      .works-page .works-hero {
+        padding: 110px 0 70px;
+      }
+
+      .works-page .works-hero-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+        margin-top: 35px;
+      }
+
+      .works-page .works-strip {
+        overflow-x: auto;
+      }
+
+      .works-page .works-strip-inner {
+        justify-content: flex-start;
+        width: max-content;
+        gap: 28px;
+      }
+
+      .works-page .works-main {
+        padding: 80px 0 90px;
+      }
+
+      .works-page .works-section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .works-page .works-filters {
+        gap: 8px;
+        margin-bottom: 30px;
+      }
+
+      .works-page .works-filter {
+        padding: 10px 12px;
+        font-size: 10px;
+      }
+
+      .works-page .works-grid {
+        grid-template-columns: 1fr;
+        gap: 38px;
+      }
+
+      .works-page .work-visual {
+        min-height: 220px;
+      }
+
+      .works-page .works-cta {
+        padding: 80px 0;
+      }
+
+      .works-page .works-footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .works-page *,
+      .works-page *::before,
+      .works-page *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="works-page">
+
+  <!-- LOADING -->
+  <div class="loader" aria-label="Loading">
+    <div class="loader-content">
+      <div class="loader-logo">M<span>.</span></div>
+      <div class="loader-line"><span></span></div>
+      <div class="loader-percent">0%</div>
+      <p>CREATIVE IDEAS, NEW POSSIBILITIES.</p>
+    </div>
+  </div>
+
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <a href="index.html" class="brand" aria-label="Mellena Studio Home">
+        <img src="assets/logo.png" alt="Mellena Studio">
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="メニューを開く"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="main-nav" aria-label="メインナビゲーション">
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <a href="projects.html">PROJECTS</a>
+        <a href="works.html" aria-current="page">WORKS</a>
+        <a href="members.html">MEMBERS</a>
+        <a href="contact.html">CONTACT</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="works-hero">
+      <div class="works-container">
+
+        <div class="works-index reveal">
+          <span>03</span> / SELECTED CREATIONS
+        </div>
+
+        <h1 class="reveal">
+          OUR
+          <span>WORKS.</span>
+        </h1>
+
+        <p class="works-hero-subtitle reveal">
+          DESIGNED WITH PURPOSE. CREATED WITH PASSION.
+        </p>
+
+        <div class="works-hero-bottom reveal">
+          <p>
+            アイデアを、実際のカタチへ。<br>
+            Webサイト、デジタルツール、デザインなど、<br>
+            これまでの制作物を紹介するポートフォリオです。
+          </p>
+
+          <a href="#works-list" class="works-scroll-link">
+            EXPLORE OUR WORKS
+            <span></span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- STRIP -->
+    <section class="works-strip" aria-label="Works categories">
+      <div class="works-container works-strip-inner">
+        <div class="works-strip-item"><span>01</span> WEB</div>
+        <div class="works-strip-item"><span>02</span> TOOLS</div>
+        <div class="works-strip-item"><span>03</span> DESIGN</div>
+        <div class="works-strip-item"><span>04</span> CREATIVE</div>
+        <div class="works-strip-item"><span>05</span> OTHER</div>
+      </div>
+    </section>
+
+    <!-- WORKS LIST -->
+    <section class="works-main" id="works-list">
+      <div class="works-container">
+
+        <div class="works-section-heading reveal">
+          <div>
+            <span class="works-label">SELECTED CREATIONS</span>
+            <h2>MADE WITH <span>PURPOSE.</span></h2>
+          </div>
+
+          <div class="works-count">
+            <strong id="works-count">06</strong>
+            <span> / WORKS</span>
+          </div>
+        </div>
+
+        <!-- FILTERS -->
+        <div class="works-filters reveal" role="group" aria-label="作品カテゴリー">
+
+          <button
+            type="button"
+            class="works-filter is-active"
+            data-filter="all"
+            aria-pressed="true"
+          >
+            ALL WORKS
+          </button>
+
+          <button
+            type="button"
+            class="works-filter"
+            data-filter="web"
+            aria-pressed="false"
+          >
+            WEB
+          </button>
+
+          <button
+            type="button"
+            class="works-filter"
+            data-filter="tools"
+            aria-pressed="false"
+          >
+            TOOLS
+          </button>
+
+          <button
+            type="button"
+            class="works-filter"
+            data-filter="design"
+            aria-pressed="false"
+          >
+            DESIGN
+          </button>
+
+          <button
+            type="button"
+            class="works-filter"
+            data-filter="creative"
+            aria-pressed="false"
+          >
+            CREATIVE
+          </button>
+
+          <button
+            type="button"
+            class="works-filter"
+            data-filter="other"
+            aria-pressed="false"
+          >
+            OTHER
+          </button>
+
+        </div>
+
+        <!-- WORK CARDS -->
+        <div class="works-grid" id="works-grid">
+
+          <!-- WORK 01 -->
+          <article class="work-card reveal" data-category="web">
+
+            <div class="work-visual visual-web">
+              <div class="work-visual-content">
+                <span class="work-visual-kicker">WEB DEVELOPMENT</span>
+                <h3 class="work-visual-title">WEB<span>.</span></h3>
+                <p class="work-visual-subtitle">DESIGN / DEVELOPMENT</p>
+              </div>
+              <span class="work-visual-number">WORK 01</span>
+            </div>
+
+            <div class="work-info">
+              <div class="work-meta">
+                <span class="work-category">WEB</span>
+                <span class="work-status">PORTFOLIO TEMPLATE</span>
+              </div>
+
+              <h3>Web Design & Development</h3>
+
+              <p>
+                Webサイトのデザインから実装まで。
+                情報設計やユーザー体験を考えながら、Web上でアイデアを形にする。
+              </p>
+
+              <div class="work-bottom">
+                <span>HTML / CSS / JAVASCRIPT</span>
+                <span class="work-arrow" aria-hidden="true">↗</span>
+              </div>
+            </div>
+
+          </article>
+
+          <!-- WORK 02 -->
+          <article class="work-card reveal" data-category="tools">
+
+            <div class="work-visual visual-tool">
+              <div class="work-visual-content">
+                <span class="work-visual-kicker">DIGITAL SYSTEMS</span>
+                <h3 class="work-visual-title">TOOLS<span>.</span></h3>
+                <p class="work-visual-subtitle">SYSTEMS / AUTOMATION</p>
+              </div>
+              <span class="work-visual-number">WORK 02</span>
+            </div>
+
+            <div class="work-info">
+              <div class="work-meta">
+                <span class="work-category">TOOLS</span>
+                <span class="work-status">PORTFOLIO TEMPLATE</span>
+              </div>
+
+              <h3>Digital Tools</h3>
+
+              <p>
+                日々の業務や活動を支えるWebツール。
+                使いやすさと機能性を両立したデジタル体験を目指す。
+              </p>
+
+              <div class="work-bottom">
+                <span>WEB APPS / TOOLS</span>
+                <span class="work-arrow" aria-hidden="true">↗</span>
+              </div>
+            </div>
+
+          </article>
+
+          <!-- WORK 03 -->
+          <article class="work-card reveal" data-category="design">
+
+            <div class="work-visual visual-design">
+              <div class="work-visual-content">
+                <span class="work-visual-kicker">VISUAL CREATION</span>
+                <h3 class="work-visual-title">DESIGN<span>.</span></h3>
+                <p class="work-visual-subtitle">BRANDING / GRAPHICS</p>
+              </div>
+              <span class="work-visual-number">WORK 03</span>
+            </div>
+
+            <div class="work-info">
+              <div class="work-meta">
+                <span class="work-category">DESIGN</span>
+                <span class="work-status">PORTFOLIO TEMPLATE</span>
+              </div>
+
+              <h3>Visual & Graphic Design</h3>
+
+              <p>
+                ロゴ、バナー、ビジュアルなど、
+                ブランドの世界観を伝えるためのクリエイティブ制作。
+              </p>
+
+              <div class="work-bottom">
+                <span>GRAPHICS / BRANDING</span>
+                <span class="work-arrow" aria-hidden="true">↗</span>
+              </div>
+            </div>
+
+          </article>
+
+          <!-- WORK 04 -->
+          <article class="work-card reveal" data-category="creative">
+
+            <div class="work-visual visual-creative">
+              <div class="work-visual-content">
+                <span class="work-visual-kicker">CREATIVE PROJECTS</span>
+                <h3 class="work-visual-title">CREATE<span>.</span></h3>
+                <p class="work-visual-subtitle">IDEAS / EXPERIMENTS</p>
+              </div>
+              <span class="work-visual-number">WORK 04</span>
+            </div>
+
+            <div class="work-info">
+              <div class="work-meta">
+                <span class="work-category">CREATIVE</span>
+                <span class="work-status">PORTFOLIO TEMPLATE</span>
+              </div>
+
+              <h3>Creative Experiments</h3>
+
+              <p>
+                新しい表現やアイデアを試しながら、
+                デジタルならではの可能性を探るクリエイティブ制作。
+              </p>
+
+              <div class="work-bottom">
+                <span>EXPERIMENTAL / DIGITAL</span>
+                <span class="work-arrow" aria-hidden="true">↗</span>
+              </div>
+            </div>
+
+          </article>
+
+          <!-- WORK 05 -->
+          <article class="work-card reveal" data-category="web">
+
+            <div class="work-visual visual-web">
+              <div class="work-visual-content">
+                <span class="work-visual-kicker">DIGITAL EXPERIENCE</span>
+                <h3 class="work-visual-title">EXPERIENCE<span>.</span></h3>
+                <p class="work-visual-subtitle">INTERACTION / UI</p>
+              </div>
+              <span class="work-visual-number">WORK 05</span>
+            </div>
+
+            <div class="work-info">
+              <div class="work-meta">
+                <span class="work-category">WEB</span>
+                <span class="work-status">PORTFOLIO TEMPLATE</span>
+              </div>
+
+              <h3>Interactive Web Experience</h3>
+
+              <p>
+                アニメーションやインタラクションを活用し、
+                見るだけでなく操作して楽しめるWeb体験を設計する。
+              </p>
+
+              <div class="work-bottom">
+                <span>UI / INTERACTION</span>
+                <span class="work-arrow" aria-hidden="true">↗</span>
+              </div>
+            </div>
+
+          </article>
+
+          <!-- WORK 06 -->
+          <article class="work-card reveal" data-category="other">
+
+            <div class="work-visual visual-community">
+              <div class="work-visual-content">
+                <span class="work-visual-kicker">OTHER CREATIONS</span>
+                <h3 class="work-visual-title">OTHERS<span>.</span></h3>
+                <p class="work-visual-subtitle">PROJECTS / ACTIVITIES</p>
+              </div>
+              <span class="work-visual-number">WORK 06</span>
+            </div>
+
+            <div class="work-info">
+              <div class="work-meta">
+                <span class="work-category">OTHER</span>
+                <span class="work-status">PORTFOLIO TEMPLATE</span>
+              </div>
+
+              <h3>Other Creations</h3>
+
+              <p>
+                Webやデザインに限らず、
+                さまざまな分野で取り組んだ制作物や活動を紹介する。
+              </p>
+
+              <div class="work-bottom">
+                <span>OTHER / PROJECTS</span>
+                <span class="work-arrow" aria-hidden="true">↗</span>
+              </div>
+            </div>
+
+          </article>
+
+        </div>
+
+        <!-- EMPTY RESULT -->
+        <div class="works-empty" id="works-empty">
+          このカテゴリーの作品はまだありません。<br>
+          別のカテゴリーを選択してください。
+        </div>
+
+        <div class="works-note reveal">
+          <strong>PORTFOLIO NOTE</strong><br>
+          現在の作品カードはレイアウト確認用のテンプレートです。
+          公開済みの制作実績を追加する際は、作品名・説明・画像・公開先URLを実際の情報に置き換えてください。
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="works-cta">
+      <div class="works-container reveal">
+
+        <span class="works-label">HAVE A PROJECT IN MIND?</span>
+
+        <h2 class="works-heading">
+          LET'S CREATE<br>
+          <span>SOMETHING.</span>
+        </h2>
+
+        <p>
+          新しいWebサイト、デザイン、デジタルプロジェクト。<br>
+          アイデアを一緒に形にしていきませんか？
+        </p>
+
+        <a href="contact.html" class="works-cta-button">
+          CONTACT US
+          <span aria-hidden="true">↗</span>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="works-footer">
+    <div class="works-container works-footer-inner">
+
+      <a href="index.html" class="works-footer-brand">
+        MELLENA <span>STUDIO.</span>
+      </a>
+
+      <p class="works-footer-copy">
+        © <span id="works-year"></span> Mellena Studio. All Rights Reserved.
+      </p>
+
+    </div>
+  </footer>
+
+  <!-- COMMON SCRIPT -->
+  <script src="js/script.js"></script>
+
+  <!-- WORKS FILTER -->
+  <script>
+    (() => {
+      const filterButtons = document.querySelectorAll(".works-filter");
+      const cards = document.querySelectorAll(".work-card");
+      const countElement = document.getElementById("works-count");
+      const emptyElement = document.getElementById("works-empty");
+      const yearElement = document.getElementById("works-year");
+
+      if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+      }
+
+      function filterWorks(category) {
+        let visibleCount = 0;
+
+        cards.forEach((card) => {
+          const matches =
+            category === "all" ||
+            card.dataset.category === category;
+
+          card.hidden = !matches;
+
+          if (matches) {
+            visibleCount++;
+
+            card.style.animation = "none";
+            void card.offsetWidth;
+            card.style.animation = "";
+          }
+        });
+
+        filterButtons.forEach((button) => {
+          const isActive = button.dataset.filter === category;
+
+          button.classList.toggle("is-active", isActive);
+          button.setAttribute("aria-pressed", String(isActive));
+        });
+
+        if (countElement) {
+          countElement.textContent = String(visibleCount).padStart(2, "0");
+        }
+
+        if (emptyElement) {
+          emptyElement.classList.toggle("is-visible", visibleCount === 0);
+        }
+      }
+
+      filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          filterWorks(button.dataset.filter);
+        });
+      });
+
+      filterWorks("all");
+    })();
+  </script>
+
+</body>
+</html>
