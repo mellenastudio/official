@@ -93,9 +93,19 @@ function initLoader() {
       window.dispatchEvent(new Event("scroll"));
 
       setTimeout(() => {
-        loader.remove();
-      }, 120000);
+  loader.remove();
 
+  // スクロールを妨げる設定を解除
+  document.documentElement.style.removeProperty("overflow");
+  document.body.style.removeProperty("overflow");
+
+  document.documentElement.style.removeProperty("position");
+  document.body.style.removeProperty("position");
+
+  document.documentElement.classList.remove("no-scroll");
+  document.body.classList.remove("no-scroll");
+
+      }, 5000);
     }, 180);
   }
 
