@@ -2263,3 +2263,27 @@ main {
     animation: none;
   }
 }
+
+/* ========================================
+   FIX: ABOUT PAGE SCROLL
+======================================== */
+
+html {
+  min-height: 100%;
+  overflow-x: clip !important;
+  overflow-y: auto !important;
+  scroll-behavior: smooth;
+}
+
+body.about-page {
+  min-height: 100%;
+  height: auto !important;
+  overflow-x: clip !important;
+  overflow-y: auto !important;
+}
+
+/* ローディング終了後にページ操作を妨げない */
+.loader.is-hidden {
+  display: none !important;
+  pointer-events: none !important;
+}
