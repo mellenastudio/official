@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080808">
+  <meta name="description" content="Mellena Studioについて。クリエイティブの可能性を広げ、新しい価値を生み出す総合クリエイティブブランド。">
+  <title>ABOUT US | Mellena Studio</title>
+
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* ========================================
+       ABOUT PAGE
+       Mellena Studio
+    ======================================== */
+
+    .about-page {
+      background: #080808;
+      color: #f7f7f4;
+      overflow: hidden;
+    }
+
+    .about-page a {
+      color: inherit;
+    }
+
+    .about-page .about-container {
+      width: min(1180px, 88%);
+      margin: 0 auto;
+    }
+
+    .about-page .about-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: #e8c84a;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    .about-page .about-label::before {
+      content: "";
+      width: 24px;
+      height: 1px;
+      background: #e8c84a;
+    }
+
+    .about-page .about-heading {
+      margin: 24px 0;
+      font-size: clamp(38px, 7vw, 82px);
+      font-weight: 800;
+      line-height: 1.04;
+      letter-spacing: -0.065em;
+    }
+
+    .about-page .about-heading span {
+      color: #e8c84a;
+    }
+
+    .about-page .about-description {
+      max-width: 650px;
+      color: #aaa9a2;
+      font-size: 14px;
+      line-height: 2.2;
+    }
+
+    /* Hero */
+
+    .about-page .about-hero {
+      position: relative;
+      display: flex;
+      align-items: center;
+      min-height: 590px;
+      padding: 125px 0 110px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      isolation: isolate;
+    }
+
+    .about-page .about-hero::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 5%;
+      right: -12%;
+      width: min(650px, 75vw);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: radial-gradient(
+        circle,
+        rgba(232, 200, 74, 0.13),
+        rgba(232, 200, 74, 0.035) 38%,
+        transparent 70%
+      );
+      pointer-events: none;
+    }
+
+    .about-page .hero-index {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 30px;
+      color: #8b8b83;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+    }
+
+    .about-page .hero-index span {
+      color: #e8c84a;
+    }
+
+    .about-page .about-hero h1 {
+      margin: 0;
+      font-size: clamp(64px, 12vw, 148px);
+      font-weight: 900;
+      line-height: 0.9;
+      letter-spacing: -0.085em;
+    }
+
+    .about-page .about-hero h1 span {
+      display: block;
+      color: #e8c84a;
+    }
+
+    .about-page .hero-subtitle {
+      margin: 30px 0 0;
+      color: #b8b7af;
+      font-size: clamp(12px, 1.5vw, 15px);
+      letter-spacing: 0.12em;
+    }
+
+    .about-page .hero-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 24px;
+      margin-top: 55px;
+    }
+
+    .about-page .hero-bottom p {
+      max-width: 510px;
+      margin: 0;
+      color: #999890;
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    .about-page .hero-scroll {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #e8c84a;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+    }
+
+    .about-page .hero-scroll span {
+      display: block;
+      width: 36px;
+      height: 1px;
+      background: #e8c84a;
+    }
+
+    /* Introduction */
+
+    .about-page .about-intro {
+      padding: 130px 0;
+    }
+
+    .about-page .intro-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .about-page .intro-side {
+      padding-top: 12px;
+    }
+
+    .about-page .intro-side .side-number {
+      display: block;
+      margin-top: 35px;
+      color: rgba(232, 200, 74, 0.23);
+      font-size: clamp(80px, 12vw, 150px);
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.08em;
+    }
+
+    .about-page .intro-main h2 {
+      margin: 0 0 30px;
+      font-size: clamp(27px, 4vw, 46px);
+      font-weight: 700;
+      line-height: 1.6;
+      letter-spacing: -0.04em;
+    }
+
+    .about-page .intro-main h2 em {
+      color: #e8c84a;
+      font-style: normal;
+    }
+
+    .about-page .intro-main p {
+      margin: 0 0 20px;
+      color: #aaa9a2;
+      font-size: 14px;
+      line-height: 2.2;
+    }
+
+    .about-page .intro-quote {
+      margin-top: 45px;
+      padding: 25px 0 25px 24px;
+      border-left: 2px solid #e8c84a;
+      color: #f2f0e6;
+      font-size: 15px;
+      line-height: 2;
+    }
+
+    /* Philosophy */
+
+    .about-page .about-philosophy {
+      padding: 120px 0;
+      background: #11110e;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .about-page .section-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 35px;
+      margin-bottom: 65px;
+    }
+
+    .about-page .section-top .about-heading {
+      margin-bottom: 0;
+    }
+
+    .about-page .section-top > p {
+      max-width: 330px;
+      margin: 0 0 8px;
+      color: #929189;
+      font-size: 12px;
+      line-height: 2;
+    }
+
+    .about-page .philosophy-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      border-top: 1px solid #35352f;
+      border-bottom: 1px solid #35352f;
+    }
+
+    .about-page .philosophy-card {
+      position: relative;
+      min-height: 290px;
+      padding: 32px 25px 35px 0;
+    }
+
+    .about-page .philosophy-card + .philosophy-card {
+      padding-left: 25px;
+      border-left: 1px solid #35352f;
+    }
+
+    .about-page .philosophy-number {
+      color: #e8c84a;
+      font-size: 12px;
+      letter-spacing: 0.15em;
+    }
+
+    .about-page .philosophy-card h3 {
+      margin: 35px 0 17px;
+      font-size: clamp(19px, 2.2vw, 26px);
+      line-height: 1.5;
+    }
+
+    .about-page .philosophy-card p {
+      margin: 0;
+      color: #999890;
+      font-size: 12px;
+      line-height: 2.1;
+    }
+
+    .about-page .philosophy-en {
+      display: block;
+      margin-top: 25px;
+      color: #64635c;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+    }
+
+    /* What we do */
+
+    .about-page .about-activities {
+      padding: 130px 0;
+    }
+
+    .about-page .activities-list {
+      margin-top: 60px;
+      border-top: 1px solid #35352f;
+    }
+
+    .about-page .activity-item {
+      display: grid;
+      grid-template-columns: 70px 1fr auto;
+      align-items: center;
+      gap: 25px;
+      padding: 30px 0;
+      border-bottom: 1px solid #35352f;
+      transition: padding 0.3s ease, background 0.3s ease;
+    }
+
+    .about-page .activity-item:hover {
+      padding-left: 15px;
+      padding-right: 15px;
+      background: rgba(232, 200, 74, 0.035);
+    }
+
+    .about-page .activity-number {
+      color: #e8c84a;
+      font-size: 12px;
+    }
+
+    .about-page .activity-item h3 {
+      margin: 0 0 8px;
+      font-size: clamp(20px, 3vw, 30px);
+      letter-spacing: -0.035em;
+    }
+
+    .about-page .activity-item p {
+      margin: 0;
+      color: #96958d;
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    .about-page .activity-arrow {
+      color: #e8c84a;
+      font-size: 25px;
+      transition: transform 0.3s ease;
+    }
+
+    .about-page .activity-item:hover .activity-arrow {
+      transform: translateX(6px);
+    }
+
+    /* History */
+
+    .about-page .about-history {
+      padding: 120px 0;
+      background: #11110e;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .about-page .history-layout {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 80px;
+    }
+
+    .about-page .history-heading {
+      position: sticky;
+      top: 110px;
+      align-self: start;
+    }
+
+    .about-page .history-heading .about-heading {
+      font-size: clamp(45px, 7vw, 78px);
+    }
+
+    .about-page .history-heading p {
+      max-width: 300px;
+      color: #999890;
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    .about-page .history-list {
+      border-top: 1px solid #35352f;
+    }
+
+    .about-page .history-item {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 25px;
+      padding: 30px 0;
+      border-bottom: 1px solid #35352f;
+    }
+
+    .about-page .history-year {
+      color: #e8c84a;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+    }
+
+    .about-page .history-item h3 {
+      margin: 0 0 10px;
+      font-size: 17px;
+    }
+
+    .about-page .history-item p {
+      margin: 0;
+      color: #999890;
+      font-size: 12px;
+      line-height: 2;
+    }
+
+    .about-page .history-note {
+      margin-top: 25px;
+      color: #77766e;
+      font-size: 11px;
+      line-height: 1.9;
+    }
+
+    /* Founder */
+
+    .about-page .about-founder {
+      padding: 130px 0;
+    }
+
+    .about-page .founder-card {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 65px;
+      align-items: center;
+      margin-top: 55px;
+      padding: 45px;
+      border: 1px solid #35352f;
+      background:
+        radial-gradient(
+          ellipse at 15% 15%,
+          rgba(232, 200, 74, 0.08),
+          transparent 55%
+        ),
+        #0c0c0b;
+    }
+
+    .about-page .founder-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 300px;
+      border: 1px solid #34332a;
+      background:
+        linear-gradient(
+          135deg,
+          rgba(232, 200, 74, 0.08),
+          transparent 60%
+        ),
+        #11110e;
+    }
+
+    .about-page .founder-monogram {
+      color: #e8c84a;
+      font-size: clamp(90px, 15vw, 170px);
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.12em;
+    }
+
+    .about-page .founder-role {
+      color: #e8c84a;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+    }
+
+    .about-page .founder-info h3 {
+      margin: 18px 0;
+      font-size: clamp(29px, 4vw, 43px);
+      letter-spacing: -0.04em;
+    }
+
+    .about-page .founder-info > p {
+      color: #aaa9a2;
+      font-size: 13px;
+      line-height: 2.2;
+    }
+
+    .about-page .founder-placeholder {
+      margin-top: 25px;
+      padding-top: 20px;
+      border-top: 1px solid #35352f;
+      color: #77766e;
+      font-size: 11px;
+      line-height: 2;
+    }
+
+    /* CTA */
+
+    .about-page .about-cta {
+      position: relative;
+      padding: 110px 0 120px;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      background:
+        radial-gradient(
+          ellipse at 50% 100%,
+          rgba(232, 200, 74, 0.1),
+          transparent 60%
+        ),
+        #0b0b09;
+    }
+
+    .about-page .about-cta .about-heading {
+      margin: 25px 0;
+      font-size: clamp(45px, 9vw, 105px);
+    }
+
+    .about-page .about-cta > .about-container > p {
+      max-width: 500px;
+      margin: 0 auto;
+      color: #999890;
+      font-size: 13px;
+      line-height: 2.1;
+    }
+
+    .about-page .about-cta-button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      min-width: 220px;
+      margin-top: 35px;
+      padding: 17px 25px;
+      border: 1px solid #e8c84a;
+      color: #e8c84a !important;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-decoration: none;
+      transition:
+        color 0.3s ease,
+        background 0.3s ease,
+        gap 0.3s ease;
+    }
+
+    .about-page .about-cta-button:hover {
+      gap: 42px;
+      color: #080808 !important;
+      background: #e8c84a;
+    }
+
+    /* Footer */
+
+    .about-page .about-footer {
+      padding: 28px 0;
+      border-top: 1px solid #292923;
+    }
+
+    .about-page .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .about-page .footer-brand {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+    }
+
+    .about-page .footer-brand span {
+      color: #e8c84a;
+    }
+
+    .about-page .footer-copy {
+      color: #77766e;
+      font-size: 10px;
+      letter-spacing: 0.05em;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 760px) {
+      .about-page .about-container {
+        width: 88%;
+      }
+
+      .about-page .about-hero {
+        min-height: auto;
+        padding: 110px 0 75px;
+      }
+
+      .about-page .hero-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+        margin-top: 40px;
+      }
+
+      .about-page .about-intro,
+      .about-page .about-activities,
+      .about-page .about-founder {
+        padding: 85px 0;
+      }
+
+      .about-page .about-philosophy,
+      .about-page .about-history {
+        padding: 85px 0;
+      }
+
+      .about-page .intro-grid,
+      .about-page .history-layout {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .about-page .intro-side .side-number {
+        margin-top: 15px;
+        font-size: 85px;
+      }
+
+      .about-page .section-top {
+        align-items: flex-start;
+        flex-direction: column;
+        margin-bottom: 40px;
+      }
+
+      .about-page .philosophy-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-page .philosophy-card {
+        min-height: auto;
+        padding: 28px 0;
+      }
+
+      .about-page .philosophy-card + .philosophy-card {
+        padding-left: 0;
+        border-left: 0;
+        border-top: 1px solid #35352f;
+      }
+
+      .about-page .philosophy-card h3 {
+        margin-top: 20px;
+      }
+
+      .about-page .philosophy-en {
+        margin-top: 16px;
+      }
+
+      .about-page .activity-item {
+        grid-template-columns: 35px 1fr 20px;
+        gap: 12px;
+        padding: 25px 0;
+      }
+
+      .about-page .activity-item:hover {
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+
+      .about-page .history-heading {
+        position: static;
+      }
+
+      .about-page .history-item {
+        grid-template-columns: 65px 1fr;
+        gap: 15px;
+        padding: 25px 0;
+      }
+
+      .about-page .founder-card {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 22px;
+      }
+
+      .about-page .founder-visual {
+        min-height: 230px;
+      }
+
+      .about-page .about-cta {
+        padding: 85px 0;
+      }
+
+      .about-page .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .about-page *,
+      .about-page *::before,
+      .about-page *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="about-page">
+
+  <!-- LOADING -->
+  <div class="loader" aria-label="Loading">
+    <div class="loader-content">
+      <div class="loader-logo">M<span>.</span></div>
+      <div class="loader-line"><span></span></div>
+      <div class="loader-percent">0%</div>
+      <p>CREATIVE IDEAS, NEW POSSIBILITIES.</p>
+    </div>
+  </div>
+
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <a href="index.html" class="brand" aria-label="Mellena Studio Home">
+        <img src="assets/logo.png" alt="Mellena Studio">
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="メニューを開く"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="main-nav" aria-label="メインナビゲーション">
+        <a href="index.html">HOME</a>
+        <a href="about.html" aria-current="page">ABOUT</a>
+        <a href="projects.html">PROJECTS</a>
+        <a href="works.html">WORKS</a>
+        <a href="members.html">MEMBERS</a>
+        <a href="contact.html">CONTACT</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="about-hero">
+      <div class="about-container">
+
+        <div class="hero-index reveal">
+          <span>01</span>
+          / ABOUT MELLENA STUDIO
+        </div>
+
+        <h1 class="reveal">
+          ABOUT
+          <span>US.</span>
+        </h1>
+
+        <p class="hero-subtitle reveal">
+          A CREATIVE BRAND CONNECTING IDEAS AND PEOPLE.
+        </p>
+
+        <div class="hero-bottom reveal">
+          <p>
+            アイデアを、カタチに。<br>
+            人とクリエイティブをつなぎ、新しい可能性を生み出す。<br>
+            Mellena Studioについてご紹介します。
+          </p>
+
+          <a href="#introduction" class="hero-scroll">
+            SCROLL TO EXPLORE
+            <span></span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- INTRODUCTION -->
+    <section class="about-intro" id="introduction">
+      <div class="about-container intro-grid">
+
+        <div class="intro-side reveal">
+          <span class="about-label">WHO WE ARE</span>
+          <span class="side-number">M.</span>
+        </div>
+
+        <div class="intro-main reveal">
+          <h2>
+            クリエイティブの力で、<br>
+            <em>新しい可能性</em>を切り拓く。
+          </h2>
+
+          <p>
+            Mellena Studioは、さまざまなクリエイティブ分野に挑戦し、
+            アイデアを形にしていく総合クリエイティブブランドです。
+          </p>
+
+          <p>
+            Web、デザイン、デジタルコンテンツなど、
+            表現の方法にとらわれず、ひとつひとつのアイデアと向き合います。
+          </p>
+
+          <p>
+            大切にしているのは、ただ何かを作ることだけではありません。
+            誰かの想いや目的を理解し、それを新しい価値へとつなげること。
+            そして、挑戦を通じて自分たち自身も成長し続けることです。
+          </p>
+
+          <div class="intro-quote">
+            Ideas become reality.<br>
+            Creativity opens new possibilities.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PHILOSOPHY -->
+    <section class="about-philosophy">
+      <div class="about-container">
+
+        <div class="section-top reveal">
+          <div>
+            <span class="about-label">OUR PHILOSOPHY</span>
+            <h2 class="about-heading">
+              WHAT WE<br>
+              <span>BELIEVE.</span>
+            </h2>
+          </div>
+
+          <p>
+            私たちが大切にする3つの考え方。<br>
+            すべての活動の根底にある価値観です。
+          </p>
+        </div>
+
+        <div class="philosophy-grid">
+
+          <article class="philosophy-card reveal">
+            <span class="philosophy-number">01 / IDEAS</span>
+            <h3>アイデアを<br>可能性に変える。</h3>
+            <p>
+              小さなひらめきも、未来を変えるきっかけになる。
+              固定観念にとらわれず、新しい表現や方法に挑戦します。
+            </p>
+            <span class="philosophy-en">THINK BEYOND.</span>
+          </article>
+
+          <article class="philosophy-card reveal">
+            <span class="philosophy-number">02 / CREATE</span>
+            <h3>想いを、<br>カタチにする。</h3>
+            <p>
+              作り手の自己満足で終わらせず、
+              届けたい相手や目的を考え、価値のあるものを生み出します。
+            </p>
+            <span class="philosophy-en">MAKE IT REAL.</span>
+          </article>
+
+          <article class="philosophy-card reveal">
+            <span class="philosophy-number">03 / CONNECT</span>
+            <h3>人と人を、<br>クリエイティブでつなぐ。</h3>
+            <p>
+              ひとりでは生まれない発想も、誰かと協力することで広がる。
+              人とのつながりを大切にしながら成長します。
+            </p>
+            <span class="philosophy-en">GROW TOGETHER.</span>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ACTIVITIES -->
+    <section class="about-activities">
+      <div class="about-container">
+
+        <div class="reveal">
+          <span class="about-label">WHAT WE DO</span>
+          <h2 class="about-heading">
+            OUR<br>
+            <span>CREATIVITY.</span>
+          </h2>
+          <p class="about-description">
+            分野の境界を越え、さまざまな方法でアイデアを形にする。<br>
+            Mellena Studioのクリエイティブ領域をご紹介します。
+          </p>
+        </div>
+
+        <div class="activities-list">
+
+          <article class="activity-item reveal">
+            <span class="activity-number">01</span>
+            <div>
+              <h3>Web Development</h3>
+              <p>
+                Webサイトの企画・設計・デザイン・制作を通じて、
+                情報やブランドの魅力を伝える。
+              </p>
+            </div>
+            <span class="activity-arrow" aria-hidden="true">↗</span>
+          </article>
+
+          <article class="activity-item reveal">
+            <span class="activity-number">02</span>
+            <div>
+              <h3>Design & Creative</h3>
+              <p>
+                ビジュアルやデジタル表現を通じて、
+                アイデアを魅力的なクリエイティブへと変える。
+              </p>
+            </div>
+            <span class="activity-arrow" aria-hidden="true">↗</span>
+          </article>
+
+          <article class="activity-item reveal">
+            <span class="activity-number">03</span>
+            <div>
+              <h3>Digital Projects</h3>
+              <p>
+                デジタルツールやサービスの企画・制作を通じて、
+                新しい体験や便利な仕組みを生み出す。
+              </p>
+            </div>
+            <span class="activity-arrow" aria-hidden="true">↗</span>
+          </article>
+
+          <article class="activity-item reveal">
+            <span class="activity-number">04</span>
+            <div>
+              <h3>Community & Collaboration</h3>
+              <p>
+                人や組織とのつながりを大切にし、
+                協力や共同制作を通じて可能性を広げる。
+              </p>
+            </div>
+            <span class="activity-arrow" aria-hidden="true">↗</span>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- HISTORY -->
+    <section class="about-history">
+      <div class="about-container history-layout">
+
+        <div class="history-heading reveal">
+          <span class="about-label">OUR JOURNEY</span>
+          <h2 class="about-heading">
+            THE<br>
+            <span>HISTORY.</span>
+          </h2>
+          <p>
+            挑戦を重ねながら、少しずつ未来を形にしていく。
+            Mellena Studioの歩み。
+          </p>
+        </div>
+
+        <div>
+          <div class="history-list">
+
+            <article class="history-item reveal">
+              <span class="history-year">START</span>
+              <div>
+                <h3>クリエイティブへの挑戦</h3>
+                <p>
+                  アイデアを形にすることから始まる。
+                  制作と試行錯誤を重ね、活動の基盤を築いていく。
+                </p>
+              </div>
+            </article>
+
+            <article class="history-item reveal">
+              <span class="history-year">GROW</span>
+              <div>
+                <h3>活動領域の拡大</h3>
+                <p>
+                  新しい分野や表現方法に挑戦し、
+                  クリエイティブの可能性を広げていく。
+                </p>
+              </div>
+            </article>
+
+            <article class="history-item reveal">
+              <span class="history-year">CREATE</span>
+              <div>
+                <h3>新しい価値の創造へ</h3>
+                <p>
+                  人とのつながりを大切にしながら、
+                  より多くのアイデアを形にすることを目指す。
+                </p>
+              </div>
+            </article>
+
+          </div>
+
+          <p class="history-note">
+            ※ 上記はブランドの歩みを表す構成例です。
+            実際の設立日・活動開始日・出来事に合わせて更新してください。
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FOUNDER -->
+    <section class="about-founder">
+      <div class="about-container">
+
+        <div class="reveal">
+          <span class="about-label">THE FOUNDER</span>
+          <h2 class="about-heading">
+            BEHIND THE<br>
+            <span>CREATION.</span>
+          </h2>
+          <p class="about-description">
+            ブランドを形にする人。<br>
+            Mellena Studioの代表者について。
+          </p>
+        </div>
+
+        <div class="founder-card reveal">
+
+          <div class="founder-visual" aria-label="Founder monogram">
+            <span class="founder-monogram">M.</span>
+          </div>
+
+          <div class="founder-info">
+            <span class="founder-role">FOUNDER / CREATIVE DIRECTOR</span>
+            <h3>Founder Profile</h3>
+
+            <p>
+              Mellena Studioのビジョンを形にし、
+              さまざまなクリエイティブに挑戦する。
+              アイデアを大切にしながら、新しい価値を生み出すことを目指す。
+            </p>
+
+            <div class="founder-placeholder">
+              REPRESENTATIVE NAME：未設定<br>
+              PROFILE：代表者のプロフィールを追加予定
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="about-cta">
+      <div class="about-container reveal">
+
+        <span class="about-label">LET'S CREATE TOGETHER</span>
+
+        <h2 class="about-heading">
+          YOUR IDEA.<br>
+          <span>OUR NEXT.</span>
+        </h2>
+
+        <p>
+          新しいアイデアやプロジェクトについて、<br>
+          Mellena Studioと一緒に可能性を広げてみませんか？
+        </p>
+
+        <a href="projects.html" class="about-cta-button">
+          EXPLORE PROJECTS
+          <span aria-hidden="true">↗</span>
+        </a>
+
+        <br>
+
+        <a
+          href="contact.html"
+          class="about-cta-button"
+          style="margin-top: 14px;"
+        >
+          GET IN TOUCH
+          <span aria-hidden="true">↗</span>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="about-footer">
+    <div class="about-container footer-inner">
+
+      <a href="index.html" class="footer-brand" style="text-decoration:none;">
+        MELLENA <span>STUDIO.</span>
+      </a>
+
+      <p class="footer-copy">
+        © <span id="current-year"></span> Mellena Studio. All Rights Reserved.
+      </p>
+
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+
+  <script>
+    // ABOUT PAGE: Current year
+    const yearElement = document.getElementById("current-year");
+
+    if (yearElement) {
+      yearElement.textContent = new Date().getFullYear();
+    }
+  </script>
+
+</body>
+</html>
