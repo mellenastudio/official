@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080808">
+  <meta name="description" content="Mellena Studioのプロジェクト紹介。Web、デザイン、デジタルクリエイティブなど、アイデアから生まれる可能性をご紹介します。">
+
+  <title>PROJECTS | Mellena Studio</title>
+
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* ========================================
+       MELLENA STUDIO
+       PROJECTS PAGE
+    ======================================== */
+
+    .projects-page {
+      --project-yellow: #e8c84a;
+      --project-bg: #080808;
+      --project-panel: #11110e;
+      --project-text: #f7f7f4;
+      --project-muted: #999890;
+      --project-border: #30302a;
+
+      background: var(--project-bg);
+      color: var(--project-text);
+      overflow-x: clip;
+    }
+
+    .projects-page *,
+    .projects-page *::before,
+    .projects-page *::after {
+      box-sizing: border-box;
+    }
+
+    .projects-page .projects-container {
+      width: min(1180px, 88%);
+      margin: 0 auto;
+    }
+
+    .projects-page a {
+      color: inherit;
+    }
+
+    .projects-page .project-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--project-yellow);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+    }
+
+    .projects-page .project-label::before {
+      content: "";
+      width: 24px;
+      height: 1px;
+      background: var(--project-yellow);
+    }
+
+    .projects-page .project-heading {
+      margin: 24px 0;
+      font-size: clamp(43px, 8vw, 100px);
+      font-weight: 900;
+      line-height: 0.98;
+      letter-spacing: -0.075em;
+    }
+
+    .projects-page .project-heading span {
+      color: var(--project-yellow);
+    }
+
+    .projects-page .project-description {
+      max-width: 620px;
+      color: var(--project-muted);
+      font-size: 13px;
+      line-height: 2.2;
+    }
+
+    /* HERO */
+
+    .projects-page .projects-hero {
+      position: relative;
+      isolation: isolate;
+      padding: 140px 0 95px;
+      border-bottom: 1px solid var(--project-border);
+    }
+
+    .projects-page .projects-hero::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      right: -10%;
+      width: min(680px, 80vw);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: radial-gradient(
+        circle,
+        rgba(232, 200, 74, 0.12),
+        rgba(232, 200, 74, 0.025) 40%,
+        transparent 70%
+      );
+      pointer-events: none;
+    }
+
+    .projects-page .project-index {
+      margin-bottom: 30px;
+      color: #77766e;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+    }
+
+    .projects-page .project-index span {
+      color: var(--project-yellow);
+    }
+
+    .projects-page .projects-hero h1 {
+      margin: 0;
+      font-size: clamp(60px, 12vw, 145px);
+      font-weight: 900;
+      line-height: 0.9;
+      letter-spacing: -0.09em;
+    }
+
+    .projects-page .projects-hero h1 span {
+      display: block;
+      color: var(--project-yellow);
+    }
+
+    .projects-page .project-hero-subtitle {
+      margin-top: 28px;
+      color: #b4b3ab;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      line-height: 2;
+    }
+
+    .projects-page .projects-hero-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 25px;
+      margin-top: 45px;
+    }
+
+    .projects-page .projects-hero-bottom p {
+      max-width: 520px;
+      margin: 0;
+      color: var(--project-muted);
+      font-size: 13px;
+      line-height: 2.1;
+    }
+
+    .projects-page .project-scroll-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+      color: var(--project-yellow);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-decoration: none;
+    }
+
+    .projects-page .project-scroll-link span {
+      width: 30px;
+      height: 1px;
+      background: var(--project-yellow);
+    }
+
+    /* INTRO STRIP */
+
+    .projects-page .project-intro-strip {
+      padding: 26px 0;
+      border-bottom: 1px solid var(--project-border);
+      overflow: hidden;
+    }
+
+    .projects-page .project-strip-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .projects-page .project-strip-item {
+      color: #88877f;
+      font-size: 10px;
+      letter-spacing: 0.13em;
+      white-space: nowrap;
+    }
+
+    .projects-page .project-strip-item span {
+      margin-right: 9px;
+      color: var(--project-yellow);
+    }
+
+    /* PROJECT SECTION */
+
+    .projects-page .projects-main {
+      padding: 110px 0 125px;
+    }
+
+    .projects-page .projects-section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 25px;
+      margin-bottom: 42px;
+    }
+
+    .projects-page .projects-section-heading h2 {
+      margin: 18px 0 0;
+      font-size: clamp(30px, 5vw, 55px);
+      font-weight: 800;
+      letter-spacing: -0.065em;
+    }
+
+    .projects-page .projects-section-heading h2 span {
+      color: var(--project-yellow);
+    }
+
+    .projects-page .projects-count {
+      flex-shrink: 0;
+      color: #88877f;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+    }
+
+    .projects-page .projects-count strong {
+      color: var(--project-yellow);
+      font-size: 22px;
+    }
+
+    /* FILTER */
+
+    .projects-page .project-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-bottom: 42px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--project-border);
+    }
+
+    .projects-page .project-filter {
+      padding: 11px 18px;
+      border: 1px solid #35352f;
+      border-radius: 0;
+      background: transparent;
+      color: #96958d;
+      font-family: inherit;
+      font-size: 11px;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition:
+        color 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    .projects-page .project-filter:hover,
+    .projects-page .project-filter.is-active {
+      border-color: var(--project-yellow);
+      background: var(--project-yellow);
+      color: #080808;
+    }
+
+    .projects-page .project-filter:focus-visible {
+      outline: 2px solid var(--project-yellow);
+      outline-offset: 4px;
+    }
+
+    /* GRID */
+
+    .projects-page .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 45px 25px;
+    }
+
+    .projects-page .project-card {
+      min-width: 0;
+      animation: projectCardIn 0.45s ease both;
+    }
+
+    .projects-page .project-card[hidden] {
+      display: none !important;
+    }
+
+    @keyframes projectCardIn {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* CARD VISUAL */
+
+    .projects-page .project-visual {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 285px;
+      aspect-ratio: 1.45 / 1;
+      overflow: hidden;
+      border: 1px solid #30302a;
+      background: #10100d;
+      isolation: isolate;
+    }
+
+    .projects-page .project-visual::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      background: radial-gradient(
+        circle at 50% 50%,
+        rgba(232, 200, 74, 0.14),
+        transparent 65%
+      );
+      transition: transform 0.6s ease;
+    }
+
+    .projects-page .project-visual::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      background-image:
+        linear-gradient(
+          rgba(232, 200, 74, 0.045) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(232, 200, 74, 0.045) 1px,
+          transparent 1px
+        );
+      background-size: 35px 35px;
+      opacity: 0.7;
+    }
+
+    .projects-page .project-card:hover .project-visual::before {
+      transform: scale(1.4);
+    }
+
+    .projects-page .project-visual-content {
+      width: 100%;
+      padding: 25px;
+      text-align: center;
+      transition: transform 0.45s ease;
+    }
+
+    .projects-page .project-card:hover .project-visual-content {
+      transform: scale(1.04);
+    }
+
+    .projects-page .project-visual-kicker {
+      display: block;
+      margin-bottom: 15px;
+      color: #a99a58;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+    }
+
+    .projects-page .project-visual-title {
+      margin: 0;
+      color: #f5f2e7;
+      font-size: clamp(29px, 5vw, 58px);
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.07em;
+      overflow-wrap: anywhere;
+    }
+
+    .projects-page .project-visual-title span {
+      color: var(--project-yellow);
+    }
+
+    .projects-page .project-visual-subtitle {
+      margin-top: 18px;
+      color: #a5a399;
+      font-size: 9px;
+      letter-spacing: 0.17em;
+    }
+
+    .projects-page .project-visual-mark {
+      position: absolute;
+      right: 17px;
+      bottom: 15px;
+      color: #8c8256;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+    }
+
+    /* DIFFERENT VISUAL THEMES */
+
+    .projects-page .visual-web {
+      background:
+        linear-gradient(
+          135deg,
+          rgba(232, 200, 74, 0.08),
+          transparent 55%
+        ),
+        #0b0b09;
+    }
+
+    .projects-page .visual-design {
+      background:
+        radial-gradient(
+          ellipse at 80% 20%,
+          rgba(232, 200, 74, 0.17),
+          transparent 50%
+        ),
+        #11110e;
+    }
+
+    .projects-page .visual-digital {
+      background:
+        linear-gradient(
+          160deg,
+          #15150f,
+          #090909 70%
+        );
+    }
+
+    .projects-page .visual-community {
+      background:
+        radial-gradient(
+          circle at 30% 80%,
+          rgba(232, 200, 74, 0.12),
+          transparent 55%
+        ),
+        #10100d;
+    }
+
+    .projects-page .visual-concept {
+      background:
+        linear-gradient(
+          45deg,
+          #14130e,
+          #080808 60%
+        );
+    }
+
+    /* CARD INFO */
+
+    .projects-page .project-card-info {
+      padding-top: 22px;
+    }
+
+    .projects-page .project-card-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .projects-page .project-category {
+      color: var(--project-yellow);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .projects-page .project-status {
+      padding: 5px 8px;
+      border: 1px solid #46453a;
+      color: #aaa99f;
+      font-size: 9px;
+      letter-spacing: 0.06em;
+    }
+
+    .projects-page .project-status.status-concept {
+      border-color: rgba(232, 200, 74, 0.35);
+      color: #c7b66d;
+    }
+
+    .projects-page .project-card-info h3 {
+      margin: 0;
+      font-size: clamp(22px, 3vw, 31px);
+      font-weight: 800;
+      line-height: 1.3;
+      letter-spacing: -0.045em;
+    }
+
+    .projects-page .project-card-info > p {
+      margin: 13px 0 0;
+      color: var(--project-muted);
+      font-size: 12px;
+      line-height: 2.1;
+    }
+
+    .projects-page .project-card-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      margin-top: 22px;
+      padding-top: 15px;
+      border-top: 1px solid #292923;
+    }
+
+    .projects-page .project-card-bottom span {
+      color: #77766e;
+      font-size: 9px;
+      letter-spacing: 0.1em;
+    }
+
+    .projects-page .project-card-arrow {
+      color: var(--project-yellow) !important;
+      font-size: 20px !important;
+      transition: transform 0.25s ease;
+    }
+
+    .projects-page .project-card:hover .project-card-arrow {
+      transform: translateX(5px);
+    }
+
+    /* EMPTY RESULT */
+
+    .projects-page .projects-empty {
+      display: none;
+      padding: 60px 20px;
+      border: 1px solid var(--project-border);
+      color: var(--project-muted);
+      font-size: 13px;
+      text-align: center;
+      line-height: 2;
+    }
+
+    .projects-page .projects-empty.is-visible {
+      display: block;
+    }
+
+    /* NOTE */
+
+    .projects-page .projects-note {
+      margin-top: 45px;
+      padding: 20px 22px;
+      border-left: 2px solid var(--project-yellow);
+      background: #10100d;
+      color: #89887f;
+      font-size: 11px;
+      line-height: 2;
+    }
+
+    .projects-page .projects-note strong {
+      color: #d5c37a;
+    }
+
+    /* COLLABORATION CTA */
+
+    .projects-page .projects-cta {
+      position: relative;
+      padding: 110px 0 120px;
+      border-top: 1px solid var(--project-border);
+      background:
+        radial-gradient(
+          ellipse at 50% 100%,
+          rgba(232, 200, 74, 0.1),
+          transparent 60%
+        ),
+        #0c0c0a;
+      text-align: center;
+    }
+
+    .projects-page .projects-cta .project-heading {
+      font-size: clamp(43px, 8.5vw, 100px);
+    }
+
+    .projects-page .projects-cta > .projects-container > p {
+      max-width: 520px;
+      margin: 0 auto;
+      color: var(--project-muted);
+      font-size: 13px;
+      line-height: 2.2;
+    }
+
+    .projects-page .projects-cta-button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      min-width: 220px;
+      margin-top: 32px;
+      padding: 17px 25px;
+      border: 1px solid var(--project-yellow);
+      color: var(--project-yellow) !important;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-decoration: none;
+      transition:
+        color 0.3s ease,
+        background 0.3s ease,
+        gap 0.3s ease;
+    }
+
+    .projects-page .projects-cta-button:hover {
+      gap: 42px;
+      background: var(--project-yellow);
+      color: #080808 !important;
+    }
+
+    /* FOOTER */
+
+    .projects-page .projects-footer {
+      padding: 28px 0;
+      border-top: 1px solid #292923;
+    }
+
+    .projects-page .projects-footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .projects-page .projects-footer-brand {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+    }
+
+    .projects-page .projects-footer-brand span {
+      color: var(--project-yellow);
+    }
+
+    .projects-page .projects-footer-copy {
+      color: #77766e;
+      font-size: 10px;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 760px) {
+      .projects-page .projects-container {
+        width: 88%;
+      }
+
+      .projects-page .projects-hero {
+        padding: 110px 0 70px;
+      }
+
+      .projects-page .projects-hero-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+        margin-top: 35px;
+      }
+
+      .projects-page .project-intro-strip {
+        overflow-x: auto;
+      }
+
+      .projects-page .project-strip-inner {
+        justify-content: flex-start;
+        width: max-content;
+        gap: 28px;
+      }
+
+      .projects-page .projects-main {
+        padding: 80px 0 90px;
+      }
+
+      .projects-page .projects-section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .projects-page .project-filters {
+        gap: 8px;
+        margin-bottom: 30px;
+      }
+
+      .projects-page .project-filter {
+        padding: 10px 12px;
+        font-size: 10px;
+      }
+
+      .projects-page .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 38px;
+      }
+
+      .projects-page .project-visual {
+        min-height: 230px;
+      }
+
+      .projects-page .projects-cta {
+        padding: 80px 0;
+      }
+
+      .projects-page .projects-footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .projects-page *,
+      .projects-page *::before,
+      .projects-page *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="projects-page">
+
+  <!-- LOADING -->
+  <div class="loader" aria-label="Loading">
+    <div class="loader-content">
+      <div class="loader-logo">M<span>.</span></div>
+      <div class="loader-line"><span></span></div>
+      <div class="loader-percent">0%</div>
+      <p>CREATIVE IDEAS, NEW POSSIBILITIES.</p>
+    </div>
+  </div>
+
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <a href="index.html" class="brand" aria-label="Mellena Studio Home">
+        <img src="assets/logo.png" alt="Mellena Studio">
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="メニューを開く"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="main-nav" aria-label="メインナビゲーション">
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <a href="projects.html" aria-current="page">PROJECTS</a>
+        <a href="works.html">WORKS</a>
+        <a href="members.html">MEMBERS</a>
+        <a href="contact.html">CONTACT</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="projects-hero">
+      <div class="projects-container">
+
+        <div class="project-index reveal">
+          <span>02</span> / OUR CREATIVE UNIVERSE
+        </div>
+
+        <h1 class="reveal">
+          OUR
+          <span>PROJECTS.</span>
+        </h1>
+
+        <p class="project-hero-subtitle reveal">
+          IDEAS INTO PROJECTS. POSSIBILITIES INTO REALITY.
+        </p>
+
+        <div class="projects-hero-bottom reveal">
+          <p>
+            アイデアから生まれる、さまざまな可能性。<br>
+            Web、デザイン、デジタルコンテンツなど、<br>
+            Mellena Studioのプロジェクトをご紹介します。
+          </p>
+
+          <a href="#project-list" class="project-scroll-link">
+            EXPLORE PROJECTS
+            <span></span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- INTRO STRIP -->
+    <section class="project-intro-strip" aria-label="Project categories">
+      <div class="projects-container project-strip-inner">
+        <div class="project-strip-item"><span>01</span> WEB</div>
+        <div class="project-strip-item"><span>02</span> DESIGN</div>
+        <div class="project-strip-item"><span>03</span> DIGITAL</div>
+        <div class="project-strip-item"><span>04</span> COMMUNITY</div>
+        <div class="project-strip-item"><span>05</span> EXPERIMENTAL</div>
+      </div>
+    </section>
+
+    <!-- PROJECT LIST -->
+    <section class="projects-main" id="project-list">
+      <div class="projects-container">
+
+        <div class="projects-section-heading reveal">
+          <div>
+            <span class="project-label">SELECTED PROJECTS</span>
+            <h2>EXPLORE OUR <span>IDEAS.</span></h2>
+          </div>
+
+          <div class="projects-count">
+            <strong id="project-count">06</strong>
+            <span> / PROJECTS</span>
+          </div>
+        </div>
+
+        <!-- FILTER BUTTONS -->
+        <div class="project-filters reveal" role="group" aria-label="プロジェクトのカテゴリー">
+
+          <button
+            type="button"
+            class="project-filter is-active"
+            data-filter="all"
+            aria-pressed="true"
+          >
+            ALL PROJECTS
+          </button>
+
+          <button
+            type="button"
+            class="project-filter"
+            data-filter="web"
+            aria-pressed="false"
+          >
+            WEB
+          </button>
+
+          <button
+            type="button"
+            class="project-filter"
+            data-filter="design"
+            aria-pressed="false"
+          >
+            DESIGN
+          </button>
+
+          <button
+            type="button"
+            class="project-filter"
+            data-filter="digital"
+            aria-pressed="false"
+          >
+            DIGITAL
+          </button>
+
+          <button
+            type="button"
+            class="project-filter"
+            data-filter="community"
+            aria-pressed="false"
+          >
+            COMMUNITY
+          </button>
+
+        </div>
+
+        <!-- PROJECT CARDS -->
+        <div class="projects-grid" id="projects-grid">
+
+          <!-- PROJECT 01 -->
+          <article class="project-card reveal" data-category="web">
+
+            <div class="project-visual visual-web">
+              <div class="project-visual-content">
+                <span class="project-visual-kicker">DIGITAL EXPERIENCE</span>
+                <h3 class="project-visual-title">WEB<span>.</span></h3>
+                <p class="project-visual-subtitle">DESIGN / DEVELOPMENT</p>
+              </div>
+              <span class="project-visual-mark">PROJECT 01</span>
+            </div>
+
+            <div class="project-card-info">
+
+              <div class="project-card-meta">
+                <span class="project-category">WEB DEVELOPMENT</span>
+                <span class="project-status status-concept">CONCEPT</span>
+              </div>
+
+              <h3>Digital Experiences</h3>
+
+              <p>
+                Webサイトやデジタルサービスを通じて、
+                ブランドやアイデアの魅力を伝えるプロジェクト構想。
+              </p>
+
+              <div class="project-card-bottom">
+                <span>WEB / DIGITAL</span>
+                <span class="project-card-arrow" aria-hidden="true">↗</span>
+              </div>
+
+            </div>
+          </article>
+
+          <!-- PROJECT 02 -->
+          <article class="project-card reveal" data-category="design">
+
+            <div class="project-visual visual-design">
+              <div class="project-visual-content">
+                <span class="project-visual-kicker">VISUAL IDENTITY</span>
+                <h3 class="project-visual-title">DESIGN<span>.</span></h3>
+                <p class="project-visual-subtitle">BRANDING / VISUALS</p>
+              </div>
+              <span class="project-visual-mark">PROJECT 02</span>
+            </div>
+
+            <div class="project-card-info">
+
+              <div class="project-card-meta">
+                <span class="project-category">DESIGN & CREATIVE</span>
+                <span class="project-status status-concept">CONCEPT</span>
+              </div>
+
+              <h3>Visual Identity Lab</h3>
+
+              <p>
+                ロゴ、ビジュアル、ブランド表現など、
+                アイデアを一貫したデザインへとつなげる企画構想。
+              </p>
+
+              <div class="project-card-bottom">
+                <span>DESIGN / BRANDING</span>
+                <span class="project-card-arrow" aria-hidden="true">↗</span>
+              </div>
+
+            </div>
+          </article>
+
+          <!-- PROJECT 03 -->
+          <article class="project-card reveal" data-category="digital">
+
+            <div class="project-visual visual-digital">
+              <div class="project-visual-content">
+                <span class="project-visual-kicker">TOOLS & TECHNOLOGY</span>
+                <h3 class="project-visual-title">DIGITAL<span>.</span></h3>
+                <p class="project-visual-subtitle">TOOLS / SYSTEMS</p>
+              </div>
+              <span class="project-visual-mark">PROJECT 03</span>
+            </div>
+
+            <div class="project-card-info">
+
+              <div class="project-card-meta">
+                <span class="project-category">DIGITAL PROJECTS</span>
+                <span class="project-status status-concept">CONCEPT</span>
+              </div>
+
+              <h3>Digital Innovation</h3>
+
+              <p>
+                デジタルツールや仕組みを活用し、
+                日常や活動をより便利にするアイデアの企画構想。
+              </p>
+
+              <div class="project-card-bottom">
+                <span>DIGITAL / TECHNOLOGY</span>
+                <span class="project-card-arrow" aria-hidden="true">↗</span>
+              </div>
+
+            </div>
+          </article>
+
+          <!-- PROJECT 04 -->
+          <article class="project-card reveal" data-category="community">
+
+            <div class="project-visual visual-community">
+              <div class="project-visual-content">
+                <span class="project-visual-kicker">PEOPLE & CONNECTION</span>
+                <h3 class="project-visual-title">CONNECT<span>.</span></h3>
+                <p class="project-visual-subtitle">COMMUNITY / COLLABORATION</p>
+              </div>
+              <span class="project-visual-mark">PROJECT 04</span>
+            </div>
+
+            <div class="project-card-info">
+
+              <div class="project-card-meta">
+                <span class="project-category">COMMUNITY</span>
+                <span class="project-status status-concept">CONCEPT</span>
+              </div>
+
+              <h3>Creative Connections</h3>
+
+              <p>
+                人と人、アイデアとアイデアをつなぎ、
+                新しいコラボレーションの可能性を探る企画構想。
+              </p>
+
+              <div class="project-card-bottom">
+                <span>COMMUNITY / COLLABORATION</span>
+                <span class="project-card-arrow" aria-hidden="true">↗</span>
+              </div>
+
+            </div>
+          </article>
+
+          <!-- PROJECT 05 -->
+          <article class="project-card reveal" data-category="web">
+
+            <div class="project-visual visual-concept">
+              <div class="project-visual-content">
+                <span class="project-visual-kicker">WEB EXPERIMENTS</span>
+                <h3 class="project-visual-title">EXPERIMENT<span>.</span></h3>
+                <p class="project-visual-subtitle">INTERACTION / MOTION</p>
+              </div>
+              <span class="project-visual-mark">PROJECT 05</span>
+            </div>
+
+            <div class="project-card-info">
+
+              <div class="project-card-meta">
+                <span class="project-category">WEB / EXPERIMENTAL</span>
+                <span class="project-status status-concept">CONCEPT</span>
+              </div>
+
+              <h3>Creative Experiments</h3>
+
+              <p>
+                アニメーション、インタラクション、
+                新しいWeb表現などを試す実験的な企画構想。
+              </p>
+
+              <div class="project-card-bottom">
+                <span>WEB / EXPERIMENTAL</span>
+                <span class="project-card-arrow" aria-hidden="true">↗</span>
+              </div>
+
+            </div>
+          </article>
+
+          <!-- PROJECT 06 -->
+          <article class="project-card reveal" data-category="design">
+
+            <div class="project-visual visual-design">
+              <div class="project-visual-content">
+                <span class="project-visual-kicker">CREATIVE DIRECTION</span>
+                <h3 class="project-visual-title">NEXT<span>.</span></h3>
+                <p class="project-visual-subtitle">IDEAS / FUTURE</p>
+              </div>
+              <span class="project-visual-mark">PROJECT 06</span>
+            </div>
+
+            <div class="project-card-info">
+
+              <div class="project-card-meta">
+                <span class="project-category">CREATIVE PLANNING</span>
+                <span class="project-status status-concept">CONCEPT</span>
+              </div>
+
+              <h3>Next Possibilities</h3>
+
+              <p>
+                まだ形になっていないアイデアを探り、
+                新しいクリエイティブの可能性を考える企画構想。
+              </p>
+
+              <div class="project-card-bottom">
+                <span>PLANNING / CREATIVE</span>
+                <span class="project-card-arrow" aria-hidden="true">↗</span>
+              </div>
+
+            </div>
+          </article>
+
+        </div>
+
+        <!-- EMPTY RESULT -->
+        <div class="projects-empty" id="projects-empty">
+          このカテゴリーのプロジェクトはまだありません。<br>
+          別のカテゴリーを選択してください。
+        </div>
+
+        <div class="projects-note reveal">
+          <strong>ABOUT THESE PROJECTS</strong><br>
+          現在掲載している6件は、ページデザインを確認するためのコンセプト例です。
+          実際に進行中・公開済みのプロジェクトを追加する際は、内容やステータスを更新してください。
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="projects-cta">
+      <div class="projects-container reveal">
+
+        <span class="project-label">HAVE AN IDEA?</span>
+
+        <h2 class="project-heading">
+          LET'S MAKE<br>
+          <span>IT REAL.</span>
+        </h2>
+
+        <p>
+          新しいアイデア、プロジェクト、コラボレーション。<br>
+          一緒に可能性を広げていきませんか？
+        </p>
+
+        <a href="contact.html" class="projects-cta-button">
+          CONTACT US
+          <span aria-hidden="true">↗</span>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="projects-footer">
+    <div class="projects-container projects-footer-inner">
+
+      <a href="index.html" class="projects-footer-brand">
+        MELLENA <span>STUDIO.</span>
+      </a>
+
+      <p class="projects-footer-copy">
+        © <span id="projects-year"></span> Mellena Studio. All Rights Reserved.
+      </p>
+
+    </div>
+  </footer>
+
+  <!-- COMMON SCRIPT -->
+  <script src="js/script.js"></script>
+
+  <!-- PROJECT FILTER -->
+  <script>
+    (() => {
+      const filterButtons = document.querySelectorAll(".project-filter");
+      const cards = document.querySelectorAll(".project-card");
+      const countElement = document.getElementById("project-count");
+      const emptyElement = document.getElementById("projects-empty");
+      const yearElement = document.getElementById("projects-year");
+
+      if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+      }
+
+      function filterProjects(category) {
+        let visibleCount = 0;
+
+        cards.forEach((card) => {
+          const matches =
+            category === "all" ||
+            card.dataset.category === category;
+
+          card.hidden = !matches;
+
+          if (matches) {
+            visibleCount++;
+
+            // 再表示時にカードの登場アニメーションを再実行
+            card.style.animation = "none";
+            void card.offsetWidth;
+            card.style.animation = "";
+          }
+        });
+
+        filterButtons.forEach((button) => {
+          const isActive = button.dataset.filter === category;
+
+          button.classList.toggle("is-active", isActive);
+          button.setAttribute("aria-pressed", String(isActive));
+        });
+
+        if (countElement) {
+          countElement.textContent = String(visibleCount).padStart(2, "0");
+        }
+
+        if (emptyElement) {
+          emptyElement.classList.toggle("is-visible", visibleCount === 0);
+        }
+      }
+
+      filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          filterProjects(button.dataset.filter);
+        });
+      });
+
+      // 初期表示
+      filterProjects("all");
+    })();
+  </script>
+
+</body>
+</html>
