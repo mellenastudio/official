@@ -2300,7 +2300,7 @@ body.about-page {
 
 /* ナビゲーションの文字 */
 .site-header .main-nav a {
-  color: #77766e !important;
+  color: #ffff !important;
   transition: color 0.3s ease;
 }
 
