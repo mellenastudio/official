@@ -2287,3 +2287,41 @@ body.about-page {
   display: none !important;
   pointer-events: none !important;
 }
+
+/* ========================================
+   MELLENA STUDIO
+   HEADER NAVIGATION COLOR FIX
+======================================== */
+
+/* ヘッダーの背景 */
+.site-header {
+  background: rgba(8, 8, 8, 0.96);
+}
+
+/* ナビゲーションの文字 */
+.site-header .main-nav a {
+  color: #77766e !important;
+  transition: color 0.3s ease;
+}
+
+/* マウスを乗せたとき */
+.site-header .main-nav a:hover {
+  color: #e8c84a !important;
+}
+
+/* 現在開いているページ */
+.site-header .main-nav a[aria-current="page"] {
+  color: #b9a34b !important;
+}
+
+/* スマホ用メニューの文字 */
+@media (max-width: 768px) {
+  .site-header .main-nav a {
+    color: #b5b4ac !important;
+  }
+
+  .site-header .main-nav a:hover,
+  .site-header .main-nav a[aria-current="page"] {
+    color: #e8c84a !important;
+  }
+}
