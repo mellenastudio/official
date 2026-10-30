@@ -94,7 +94,7 @@ function initLoader() {
 
       setTimeout(() => {
         loader.remove();
-      }, 750);
+      }, 3000);
 
     }, 180);
   }
